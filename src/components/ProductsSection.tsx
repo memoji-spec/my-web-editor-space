@@ -10,7 +10,7 @@ const products = [
   {
     icon: Sparkles,
     title: "Pentmini 2.0",
-    description: "Transform ideas into stunning visuals with our intuitive AI image generation platform.",
+    description: "Generate hyper realistic images of yourself and studio ready images without a single prompt.",
     bg: "bg-[#1a1035]",
     textColor: "text-primary-foreground",
     descColor: "text-primary-foreground/70",
@@ -20,8 +20,8 @@ const products = [
   },
   {
     icon: Server,
-    title: "Penthost 1.0",
-    description: "Transform ideas into stunning visuals with our intuitive AI image generation platform.",
+    title: "Penthost",
+    description: "Secure, scalable, and lightning-fast hosting solutions engineered for optimal website and application performance.",
     bg: "bg-brand-accent",
     textColor: "text-primary-foreground",
     descColor: "text-primary-foreground/70",
@@ -32,7 +32,7 @@ const products = [
   {
     icon: CreditCard,
     title: "Pentapay",
-    description: "Transform ideas into stunning visuals with our intuitive AI image generation platform.",
+    description: "Integrate robust payment processing with ease. Our gateway ensures secure, efficient, and reliable financial operations.",
     bg: "bg-[#e8daf0]",
     textColor: "text-[#9b3a6a]",
     descColor: "text-[#9b3a6a]/70",
@@ -43,7 +43,7 @@ const products = [
   {
     icon: GraduationCap,
     title: "AcadSuite",
-    description: "Transform ideas into stunning visuals with our intuitive AI image generation platform.",
+    description: "A comprehensive platform for modern education, streamlining administration and enhancing learning.",
     bg: "bg-[#181233]",
     textColor: "text-primary-foreground",
     descColor: "text-primary-foreground/70",
@@ -81,7 +81,7 @@ const ProductsSection = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-display font-extrabold text-3xl md:text-4xl text-foreground max-w-2xl"
           >
-            Intelligent, AI-powered products engineered for the modern enterprise.
+            Intelligent, AI-powered products engineered for the modern businesses and users.
           </motion.h2>
         </motion.div>
 
@@ -96,6 +96,16 @@ const ProductsSection = () => {
               whileHover={{ y: -4, transition: { duration: 0.25 } }}
               className={`${product.bg} relative rounded-3xl overflow-hidden group cursor-pointer`}
             >
+              {/* Illustration - behind everything, bigger and filling right side */}
+              <div className="absolute top-0 right-0 w-[60%] h-full flex items-center justify-end pointer-events-none overflow-hidden">
+                <img
+                  src={product.illustration}
+                  alt=""
+                  className="w-[130%] h-[130%] object-contain opacity-80 group-hover:scale-105 transition-transform duration-500"
+                  style={{ filter: "none" }}
+                />
+              </div>
+
               <div className="relative z-10 p-8 md:p-10 flex flex-col justify-between min-h-[320px]">
                 <div className="flex items-center justify-between">
                   <div className={`w-11 h-11 rounded-xl ${product.iconBg} flex items-center justify-center ${product.iconColor}`}>
@@ -104,14 +114,6 @@ const ProductsSection = () => {
                   <div className={`w-9 h-9 rounded-full border border-current/20 flex items-center justify-center ${product.descColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
                     <ArrowUpRight size={16} />
                   </div>
-                </div>
-
-                <div className="absolute top-0 right-0 w-[50%] h-full flex items-center justify-end pointer-events-none">
-                  <img
-                    src={product.illustration}
-                    alt={product.title}
-                    className="w-full h-full object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-500"
-                  />
                 </div>
 
                 <div className="mt-auto space-y-2 max-w-[55%]">

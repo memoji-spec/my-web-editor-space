@@ -9,7 +9,7 @@ const footerLinks = {
 
 const Footer = () => {
   return (
-    <footer className="bg-brand text-primary-foreground py-16">
+    <footer className="bg-[hsl(220_72%_12%)] text-primary-foreground py-16">
       <div className="max-w-7xl mx-auto section-padding">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
           <div className="col-span-2 md:col-span-1">

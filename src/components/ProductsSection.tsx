@@ -17,6 +17,7 @@ const products = [
     iconBg: "bg-purple-500/20",
     iconColor: "text-purple-300",
     illustration: aiStudioSvg,
+    illustrationClass: "right-[-10%] w-[50%]",
   },
   {
     icon: Server,
@@ -28,6 +29,7 @@ const products = [
     iconBg: "bg-blue-300/20",
     iconColor: "text-blue-200",
     illustration: hostingSvg,
+    illustrationClass: "right-[-20%] w-[60%]",
   },
   {
     icon: CreditCard,
@@ -39,6 +41,7 @@ const products = [
     iconBg: "bg-[#C74888]/15",
     iconColor: "text-[#C74888]",
     illustration: paySvg,
+    illustrationClass: "right-[-15%] w-[55%]",
   },
   {
     icon: GraduationCap,
@@ -50,6 +53,7 @@ const products = [
     iconBg: "bg-emerald-400/20",
     iconColor: "text-emerald-300",
     illustration: academicSuiteSvg,
+    illustrationClass: "right-[-20%] w-[60%]",
   },
 ];
 

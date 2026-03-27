@@ -29,7 +29,7 @@ const products = [
     iconBg: "bg-blue-300/20",
     iconColor: "text-blue-200",
     illustration: hostingSvg,
-    illustrationClass: "right-[-20%] w-[60%]",
+    illustrationClass: "right-[-30%] md:right-[-20%] w-[70%] md:w-[60%]",
   },
   {
     icon: CreditCard,

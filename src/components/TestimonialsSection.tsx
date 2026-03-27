@@ -52,7 +52,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-24 md:py-32 bg-muted/60">
+    <section className="py-24 md:py-32 bg-[hsl(220_25%_93%)]">
       <div className="max-w-7xl mx-auto section-padding">
         <motion.div
           ref={ref}

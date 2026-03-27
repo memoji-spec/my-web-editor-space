@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { useRef, useState, useEffect } from "react";
 
 const articles = [
   {
@@ -20,9 +21,47 @@ const articles = [
     description: "Explore the latest standards and technologies for ensuring secure, compliant payment processing at scale.",
     image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
   },
+  {
+    category: "Education",
+    title: "Digital Transformation in Academic Institutions",
+    description: "How modern educational platforms are revolutionizing student engagement and institutional management.",
+    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=400&fit=crop",
+  },
+  {
+    category: "Cloud",
+    title: "The Rise of Edge Computing in 2026",
+    description: "Understanding edge computing's role in reducing latency and improving performance for global applications.",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop",
+  },
 ];
 
 const InsightsSection = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScroll = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 10);
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 10);
+  };
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.addEventListener("scroll", checkScroll);
+    checkScroll();
+    return () => el.removeEventListener("scroll", checkScroll);
+  }, []);
+
+  const scroll = (dir: "left" | "right") => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const amount = el.clientWidth * 0.7;
+    el.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" });
+  };
+
   return (
     <section id="insights" className="py-24 md:py-32 bg-background">
       <div className="max-w-7xl mx-auto section-padding">
@@ -44,16 +83,24 @@ const InsightsSection = () => {
             and digital transformation.
           </p>
         </motion.div>
+      </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+      {/* Horizontally scrollable articles */}
+      <div className="relative">
+        <div
+          ref={scrollRef}
+          className="flex gap-6 overflow-x-auto scrollbar-hide px-6 md:px-12 lg:px-20 xl:px-32 pb-4"
+          style={{ scrollSnapType: "x mandatory" }}
+        >
           {articles.map((article, index) => (
             <motion.article
               key={article.title}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.7, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="group cursor-pointer"
+              transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="group cursor-pointer flex-shrink-0 w-[320px] md:w-[360px]"
+              style={{ scrollSnapAlign: "start" }}
             >
               <div className="relative overflow-hidden rounded-2xl mb-5 aspect-[3/2]">
                 <motion.img
@@ -74,7 +121,7 @@ const InsightsSection = () => {
               <h3 className="font-display font-bold text-lg text-foreground group-hover:text-accent transition-colors">
                 {article.title}
               </h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed line-clamp-3">
                 {article.description}
               </p>
 
@@ -83,6 +130,26 @@ const InsightsSection = () => {
               </div>
             </motion.article>
           ))}
+        </div>
+
+        {/* Scroll progress bar */}
+        <div className="max-w-7xl mx-auto section-padding mt-8">
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => scroll("left")}
+              disabled={!canScrollLeft}
+              className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-colors disabled:opacity-30"
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              disabled={!canScrollRight}
+              className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-colors disabled:opacity-30"
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
         </div>
       </div>
     </section>

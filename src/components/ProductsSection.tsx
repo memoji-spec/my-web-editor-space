@@ -17,7 +17,7 @@ const products = [
     iconBg: "bg-purple-500/20",
     iconColor: "text-purple-300",
     illustration: aiStudioSvg,
-    illustrationClass: "right-[-10%] w-[50%]",
+    illustrationClass: "right-[-25%] md:right-[-25%] w-[55%] md:w-[55%]",
   },
   {
     icon: Server,

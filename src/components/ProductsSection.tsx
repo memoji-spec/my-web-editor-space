@@ -17,6 +17,7 @@ const products = [
     iconBg: "bg-purple-500/20",
     iconColor: "text-purple-300",
     illustration: aiStudioSvg,
+    illustrationClass: "right-[-10%] w-[50%]",
   },
   {
     icon: Server,
@@ -28,6 +29,7 @@ const products = [
     iconBg: "bg-blue-300/20",
     iconColor: "text-blue-200",
     illustration: hostingSvg,
+    illustrationClass: "right-[-20%] w-[60%]",
   },
   {
     icon: CreditCard,
@@ -39,6 +41,7 @@ const products = [
     iconBg: "bg-[#C74888]/15",
     iconColor: "text-[#C74888]",
     illustration: paySvg,
+    illustrationClass: "right-[-15%] w-[55%]",
   },
   {
     icon: GraduationCap,
@@ -50,6 +53,7 @@ const products = [
     iconBg: "bg-emerald-400/20",
     iconColor: "text-emerald-300",
     illustration: academicSuiteSvg,
+    illustrationClass: "right-[-20%] w-[60%]",
   },
 ];
 
@@ -96,13 +100,12 @@ const ProductsSection = () => {
               whileHover={{ y: -4, transition: { duration: 0.25 } }}
               className={`${product.bg} relative rounded-3xl overflow-hidden group cursor-pointer`}
             >
-              {/* Illustration - behind everything, bigger and filling right side */}
-              <div className="absolute top-0 right-0 w-[60%] h-full flex items-center justify-end pointer-events-none overflow-hidden">
+              {/* Illustration - behind text, oversized, right-aligned */}
+              <div className={`absolute top-0 h-full flex items-center pointer-events-none ${product.illustrationClass}`}>
                 <img
                   src={product.illustration}
                   alt=""
-                  className="w-[130%] h-[130%] object-contain opacity-80 group-hover:scale-105 transition-transform duration-500"
-                  style={{ filter: "none" }}
+                  className="h-[120%] w-auto object-contain opacity-80 group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 

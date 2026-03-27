@@ -95,13 +95,6 @@ const CustomEngineeringSection = () => {
             >
               View Our Capabilities <ArrowRight size={18} />
             </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="px-10 py-6 text-lg border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground rounded-full"
-            >
-              Book a Demo
-            </Button>
           </motion.div>
         </motion.div>
       </div>

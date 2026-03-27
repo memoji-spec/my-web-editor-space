@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 
 const articles = [
   {
@@ -40,25 +40,27 @@ const InsightsSection = () => {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
 
-  const checkScroll = () => {
+  const checkScroll = useCallback(() => {
     const el = scrollRef.current;
     if (!el) return;
     setCanScrollLeft(el.scrollLeft > 10);
     setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 10);
-  };
+  }, []);
 
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
-    el.addEventListener("scroll", checkScroll);
+    el.addEventListener("scroll", checkScroll, { passive: true });
     checkScroll();
     return () => el.removeEventListener("scroll", checkScroll);
-  }, []);
+  }, [checkScroll]);
 
   const scroll = (dir: "left" | "right") => {
     const el = scrollRef.current;
     if (!el) return;
-    const amount = el.clientWidth * 0.7;
+    // Scroll by one card width
+    const card = el.querySelector("[data-card]") as HTMLElement;
+    const amount = card ? card.offsetWidth + 24 : el.clientWidth * 0.35;
     el.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" });
   };
 
@@ -70,36 +72,53 @@ const InsightsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-16"
+          className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6"
         >
-          <p className="text-sm font-semibold tracking-widest uppercase mb-3 text-accent">
-            Insights
-          </p>
-          <h2 className="font-display font-extrabold text-3xl md:text-4xl lg:text-5xl text-foreground">
-            Trending Insights on Artificial Intelligence
-          </h2>
-          <p className="mt-4 text-muted-foreground text-lg max-w-xl">
-            Stay ahead of the curve with the latest perspectives on AI-powered innovation
-            and digital transformation.
-          </p>
+          <div>
+            <p className="text-sm font-semibold tracking-widest uppercase mb-3 text-accent">
+              Insights
+            </p>
+            <h2 className="font-display font-extrabold text-3xl md:text-4xl lg:text-5xl text-foreground">
+              Trending Insights on Artificial Intelligence
+            </h2>
+            <p className="mt-4 text-muted-foreground text-lg max-w-xl">
+              Stay ahead of the curve with the latest perspectives on AI-powered innovation
+              and digital transformation.
+            </p>
+          </div>
+          <div className="flex items-center gap-3 shrink-0">
+            <button
+              onClick={() => scroll("left")}
+              disabled={!canScrollLeft}
+              className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-colors disabled:opacity-30"
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              disabled={!canScrollRight}
+              className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-colors disabled:opacity-30"
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
         </motion.div>
-      </div>
 
-      {/* Horizontally scrollable articles */}
-      <div className="relative">
+        {/* Horizontally scrollable articles - contained within layout */}
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto scrollbar-hide px-6 md:px-12 lg:px-20 xl:px-32 pb-4"
+          className="flex gap-6 overflow-x-auto scrollbar-hide pb-4 -mx-1 px-1"
           style={{ scrollSnapType: "x mandatory" }}
         >
           {articles.map((article, index) => (
             <motion.article
               key={article.title}
+              data-card
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="group cursor-pointer flex-shrink-0 w-[320px] md:w-[360px]"
+              className="group cursor-pointer flex-shrink-0 w-[calc(100%-16px)] md:w-[calc(33.333%-16px)]"
               style={{ scrollSnapAlign: "start" }}
             >
               <div className="relative overflow-hidden rounded-2xl mb-5 aspect-[3/2]">
@@ -130,26 +149,6 @@ const InsightsSection = () => {
               </div>
             </motion.article>
           ))}
-        </div>
-
-        {/* Scroll progress bar */}
-        <div className="max-w-7xl mx-auto section-padding mt-8">
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => scroll("left")}
-              disabled={!canScrollLeft}
-              className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-colors disabled:opacity-30"
-            >
-              <ChevronLeft size={18} />
-            </button>
-            <button
-              onClick={() => scroll("right")}
-              disabled={!canScrollRight}
-              className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-colors disabled:opacity-30"
-            >
-              <ChevronRight size={18} />
-            </button>
-          </div>
         </div>
       </div>
     </section>

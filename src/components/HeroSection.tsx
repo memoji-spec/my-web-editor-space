@@ -1,42 +1,13 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-
-const FloatingOrb = ({ delay, x, y, size, color }: { delay: number; x: string; y: string; size: string; color: string }) => (
-  <div
-    className="absolute rounded-full blur-3xl pointer-events-none"
-    style={{ left: x, top: y, width: size, height: size, background: color, opacity: 0.25 }}
-  />
-);
-
-const GridLines = () => (
-  <div
-    className="absolute inset-0 pointer-events-none opacity-[0.04]"
-    style={{
-      backgroundImage:
-        "linear-gradient(hsl(var(--accent) / 0.4) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--accent) / 0.4) 1px, transparent 1px)",
-      backgroundSize: "60px 60px",
-    }}
-  />
-);
+import DottedSurface from "@/components/DottedSurface";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-background pt-10 md:pt-14">
-      <FloatingOrb delay={0} x="70%" y="10%" size="500px" color="hsl(223 45% 46%)" />
-      <FloatingOrb delay={2} x="-5%" y="50%" size="450px" color="hsl(220 72% 20%)" />
-      <FloatingOrb delay={4} x="50%" y="60%" size="350px" color="hsl(0 75% 48%)" />
-      <FloatingOrb delay={1} x="30%" y="20%" size="300px" color="hsl(260 60% 40%)" />
-      <GridLines />
-
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-          backgroundRepeat: "repeat",
-          backgroundSize: "128px 128px",
-        }}
-      />
+      <DottedSurface />
 
       <div className="relative z-20 flex flex-col items-center text-center max-w-5xl mx-auto px-6">
         <motion.h1
@@ -76,9 +47,11 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="mt-10 flex flex-wrap justify-center gap-4"
         >
-          <Button size="lg" className="gap-2 px-8 py-6 text-base bg-brand text-primary-foreground hover:bg-brand/90 rounded-full font-bold shadow-lg shadow-brand/25 transition-all duration-300 hover:shadow-xl hover:shadow-brand/30 hover:scale-[1.02]">
-            Explore Our Ecosystem <ArrowRight size={16} />
-          </Button>
+          <Link to="/products">
+            <Button size="lg" className="gap-2 px-8 py-6 text-base bg-brand text-primary-foreground hover:bg-brand/90 rounded-lg font-bold shadow-lg shadow-brand/25 transition-all duration-300 hover:shadow-xl hover:shadow-brand/30 hover:scale-[1.02]">
+              Explore Our Ecosystem <ArrowRight size={16} />
+            </Button>
+          </Link>
         </motion.div>
       </div>
 

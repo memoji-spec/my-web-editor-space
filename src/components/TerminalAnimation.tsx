@@ -96,7 +96,7 @@ const containerVariants = {
 
 const lineVariants = {
   hidden: { opacity: 0, y: 4 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: "easeOut" as const } },
 };
 
 function CodeDiff({ diff }: { diff: DiffBlock }) {

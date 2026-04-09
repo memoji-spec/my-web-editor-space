@@ -1,10 +1,11 @@
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 import { Sparkles, Server, CreditCard, GraduationCap, ArrowUpRight } from "lucide-react";
 import aiStudioSvg from "@/assets/pentagonware-ai-studio.svg";
 import hostingSvg from "@/assets/pentagonware-hosting.svg";
 import paySvg from "@/assets/pentagonware-pay.svg";
 import academicSuiteSvg from "@/assets/pentagonware-academic-suite.svg";
+import { useInView } from "framer-motion";
 
 const products = [
   {
@@ -85,7 +86,7 @@ const ProductsSection = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-display font-extrabold text-3xl md:text-4xl text-foreground max-w-2xl"
           >
-            Intelligent, AI-powered products engineered for the modern businesses and users.
+            Integrated software solutions and intelligent systems designed for modern business operations and user needs.
           </motion.h2>
         </motion.div>
 
@@ -100,7 +101,6 @@ const ProductsSection = () => {
               whileHover={{ y: -4, transition: { duration: 0.25 } }}
               className={`${product.bg} relative rounded-3xl overflow-hidden group cursor-pointer`}
             >
-              {/* Illustration - behind text, oversized, right-aligned */}
               <div className={`absolute top-0 h-full flex items-center pointer-events-none ${product.illustrationClass}`}>
                 <img
                   src={product.illustration}

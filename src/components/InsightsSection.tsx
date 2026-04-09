@@ -58,9 +58,9 @@ const InsightsSection = () => {
   const scroll = (dir: "left" | "right") => {
     const el = scrollRef.current;
     if (!el) return;
-    // Scroll by one card width
     const card = el.querySelector("[data-card]") as HTMLElement;
-    const amount = card ? card.offsetWidth + 24 : el.clientWidth * 0.35;
+    const gap = 24;
+    const amount = card ? card.offsetWidth + gap : el.clientWidth * 0.35;
     el.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" });
   };
 
@@ -104,11 +104,10 @@ const InsightsSection = () => {
           </div>
         </motion.div>
 
-        {/* Horizontally scrollable articles - contained within layout */}
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto scrollbar-hide pb-4 -mx-1 px-1"
-          style={{ scrollSnapType: "x mandatory" }}
+          className="flex gap-6 overflow-x-auto scrollbar-hide pb-4 scroll-smooth"
+          style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch" }}
         >
           {articles.map((article, index) => (
             <motion.article
@@ -118,16 +117,14 @@ const InsightsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="group cursor-pointer flex-shrink-0 w-[calc(100%-16px)] md:w-[calc(33.333%-16px)]"
+              className="group cursor-pointer flex-shrink-0 w-[85%] md:w-[calc(33.333%-16px)]"
               style={{ scrollSnapAlign: "start" }}
             >
               <div className="relative overflow-hidden rounded-2xl mb-5 aspect-[3/2]">
-                <motion.img
+                <img
                   src={article.image}
                   alt={article.title}
-                  className="w-full h-full object-cover"
-                  whileHover={{ scale: 1.08 }}
-                  transition={{ duration: 0.6 }}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
                 <div className="absolute top-4 left-4">

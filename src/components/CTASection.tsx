@@ -1,72 +1,55 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-
-const MicroParticles = () => (
-  <>
-    {[...Array(18)].map((_, i) => (
-      <motion.div
-        key={i}
-        animate={{ y: [0, -350], opacity: [0, 0.4, 0] }}
-        transition={{
-          duration: 6 + Math.random() * 4,
-          repeat: Infinity,
-          delay: i * 0.5,
-          ease: "linear",
-        }}
-        className="absolute w-0.5 h-0.5 rounded-full bg-primary-foreground/30"
-        style={{ left: `${5 + i * 5}%`, bottom: "-5px" }}
-      />
-    ))}
-  </>
-);
+import { Link } from "react-router-dom";
 
 const CTASection = () => {
   return (
-    <section className="relative overflow-hidden bg-primary py-28 md:py-36">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-ring/80" />
-      <div className="absolute inset-0 opacity-[0.10]" style={{
-        backgroundImage: "radial-gradient(hsl(var(--primary-foreground)) 1px, transparent 1px)",
-        backgroundSize: "32px 32px",
-      }} />
-      <motion.div
-        animate={{ opacity: [0.04, 0.10, 0.04] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-0 right-0 w-[50%] h-full"
-        style={{ background: "linear-gradient(225deg, hsl(var(--accent) / 0.15), transparent 60%)" }}
-      />
-      <MicroParticles />
-
+    <section className="relative overflow-hidden py-20 md:py-28">
       <div className="max-w-7xl mx-auto section-padding relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center max-w-3xl mx-auto"
-        >
-          <h2 className="font-display font-extrabold text-4xl md:text-5xl lg:text-6xl text-primary-foreground">
-            Build What's <span className="text-brand-green">Next</span>.
-          </h2>
-          <p className="mt-6 text-lg md:text-xl text-primary-foreground/70 leading-relaxed max-w-xl mx-auto">
-            With Pentagonware you can create intelligent systems and scalable solutions
-            that move your business forward.
-          </p>
+        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-accent via-brand to-accent py-20 md:py-28 px-8 md:px-16">
+          {/* Decorative grid */}
+          <div className="absolute inset-0 opacity-[0.08]" style={{
+            backgroundImage: "radial-gradient(hsl(var(--primary-foreground)) 1px, transparent 1px)",
+            backgroundSize: "32px 32px",
+          }} />
+          {/* Decorative circles */}
+          <div className="absolute -top-20 -right-20 w-60 h-60 rounded-full border border-primary-foreground/10" />
+          <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full border border-primary-foreground/10" />
+          <div className="absolute top-10 left-10 w-3 h-3 rounded-full bg-primary-foreground/20" />
+          <div className="absolute bottom-20 right-20 w-2 h-2 rounded-full bg-primary-foreground/20" />
+
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-center max-w-3xl mx-auto relative z-10"
           >
-            <Button
-              size="lg"
-              className="px-10 py-6 text-lg gap-2 bg-primary-foreground text-primary hover:bg-primary-foreground/90 rounded-full font-bold shadow-xl"
+            <h2 className="font-display font-extrabold text-4xl md:text-5xl lg:text-6xl text-primary-foreground">
+              Bring Structure to Your Business Records
+            </h2>
+            <p className="mt-6 text-lg md:text-xl text-primary-foreground/70 leading-relaxed max-w-xl mx-auto">
+              Manage invoices, receipts, and inventory with clarity and control — all in one system.
+            </p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="mt-10 flex items-center justify-center"
             >
-              Get Started Today <ArrowRight size={18} />
-            </Button>
+              <Link to="/contact">
+                <Button
+                  size="lg"
+                  className="px-10 py-6 text-lg gap-2 bg-primary-foreground text-brand hover:bg-primary-foreground/90 rounded-lg font-bold shadow-xl"
+                >
+                  Book a Demo <ArrowRight size={18} />
+                </Button>
+              </Link>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

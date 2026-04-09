@@ -95,6 +95,10 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
         },
+        "scroll-logos": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-33.333%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -102,6 +106,7 @@ export default {
         "fade-up": "fade-up 0.7s ease-out forwards",
         "fade-in": "fade-in 0.5s ease-out forwards",
         "float": "float 6s ease-in-out infinite",
+        "scroll-logos": "scroll-logos 30s linear infinite",
       },
     },
   },

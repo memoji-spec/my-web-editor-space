@@ -3,8 +3,8 @@ import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ProductsSection from "@/components/ProductsSection";
+import TrustedBySection from "@/components/TrustedBySection";
 import CustomEngineeringSection from "@/components/CustomEngineeringSection";
-import BlackRecreationSection from "@/components/BlackRecreationSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import InsightsSection from "@/components/InsightsSection";
@@ -21,10 +21,10 @@ const Index = () => {
       <AnnouncementBar />
       <Navbar />
       <HeroSection />
+      <TrustedBySection />
       {[
         ProductsSection,
         CustomEngineeringSection,
-        BlackRecreationSection,
         TestimonialsSection,
         CTASection,
         InsightsSection,

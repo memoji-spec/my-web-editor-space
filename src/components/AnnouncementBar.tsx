@@ -1,6 +1,7 @@
 import { X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const AnnouncementBar = () => {
   const [visible, setVisible] = useState(true);
@@ -20,10 +21,10 @@ const AnnouncementBar = () => {
         >
           <div className="flex items-center justify-center px-4 py-2.5 text-center">
             <p className="text-xs sm:text-sm font-medium text-primary-foreground">
-              Unlock hyper-realistic AI imagery. Pentmini 2.0 is now available for all users –{" "}
-              <a href="#" className="underline underline-offset-2 font-semibold hover:opacity-80 transition-opacity">
-                See what's new
-              </a>
+              Introducing NerdClip: our platform for smarter academic workflows is now live –{" "}
+              <Link to="/products" className="underline underline-offset-2 font-semibold hover:opacity-80 transition-opacity">
+                Learn more
+              </Link>
             </p>
             <button
               onClick={() => setVisible(false)}

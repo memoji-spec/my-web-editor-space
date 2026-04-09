@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Code2, Layers, Zap, Shield } from "lucide-react";
+import { Code2, Layers, Zap, Shield, Lightbulb, Cog } from "lucide-react";
+import TerminalAnimation from "@/components/TerminalAnimation";
 
 const capabilities = [
   { icon: Code2, label: "Custom SaaS" },
@@ -10,24 +10,11 @@ const capabilities = [
   { icon: Shield, label: "Enterprise Security" },
 ];
 
-const MicroParticles = () => (
-  <>
-    {[...Array(14)].map((_, i) => (
-      <motion.div
-        key={i}
-        animate={{ y: [0, -350], opacity: [0, 0.4, 0] }}
-        transition={{
-          duration: 5 + Math.random() * 4,
-          repeat: Infinity,
-          delay: i * 0.6,
-          ease: "linear",
-        }}
-        className="absolute w-0.5 h-0.5 rounded-full bg-primary-foreground/25"
-        style={{ left: `${7 + i * 6.5}%`, bottom: "-5px" }}
-      />
-    ))}
-  </>
-);
+const features = [
+  { icon: Lightbulb, title: "Intelligent Design", desc: "Solutions architected with precision and purpose." },
+  { icon: Cog, title: "Seamless Integration", desc: "Works with your existing tools and workflows." },
+  { icon: Shield, title: "Built for Scale", desc: "Enterprise-grade from day one." },
+];
 
 const CustomEngineeringSection = () => {
   const ref = useRef(null);
@@ -40,13 +27,6 @@ const CustomEngineeringSection = () => {
         backgroundImage: "radial-gradient(circle at 1px 1px, hsl(0 0% 100%) 1px, transparent 0)",
         backgroundSize: "32px 32px",
       }} />
-      <motion.div
-        animate={{ opacity: [0.04, 0.12, 0.04] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-0 left-0 w-[50%] h-full"
-        style={{ background: "linear-gradient(135deg, hsl(var(--accent) / 0.15), transparent 55%)" }}
-      />
-      <MicroParticles />
 
       <div className="max-w-7xl mx-auto section-padding relative z-10">
         <motion.div
@@ -55,7 +35,7 @@ const CustomEngineeringSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-3xl"
+          className="max-w-3xl mb-16"
         >
           <h2 className="font-display font-extrabold text-3xl md:text-4xl lg:text-5xl text-primary-foreground">
             Custom Engineering, Without Limits.
@@ -74,28 +54,43 @@ const CustomEngineeringSection = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 whileHover={{ scale: 1.05, y: -2 }}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground text-sm font-medium backdrop-blur-sm cursor-default"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground text-sm font-medium backdrop-blur-sm cursor-default"
               >
                 <cap.icon size={16} />
                 {cap.label}
               </motion.div>
             ))}
           </div>
+        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.6 }}
-            className="mt-10 flex flex-wrap gap-4"
-          >
-            <Button
-              size="lg"
-              className="gap-2 bg-primary-foreground text-primary hover:bg-primary-foreground/90 rounded-full font-bold shadow-xl px-10 py-6 text-lg"
+        {/* Feature cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          {features.map((f, i) => (
+            <motion.div
+              key={f.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 * i }}
+              className="bg-primary-foreground/5 border border-primary-foreground/10 rounded-xl p-6 backdrop-blur-sm"
             >
-              View Our Capabilities <ArrowRight size={18} />
-            </Button>
-          </motion.div>
+              <div className="w-10 h-10 rounded-lg bg-primary-foreground/10 flex items-center justify-center text-primary-foreground mb-4">
+                <f.icon size={20} />
+              </div>
+              <h3 className="text-primary-foreground font-semibold text-lg">{f.title}</h3>
+              <p className="text-primary-foreground/60 text-sm mt-2">{f.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Terminal Animation */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <TerminalAnimation />
         </motion.div>
       </div>
     </section>

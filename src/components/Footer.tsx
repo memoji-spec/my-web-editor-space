@@ -1,15 +1,33 @@
+import { Link } from "react-router-dom";
 import logoWhite from "@/assets/pentagonware-logo-white.png";
 
 const footerLinks = {
-  Products: ["AI Studio", "Hosting", "Pay", "Academic Suite"],
-  Company: ["About", "Careers", "Blog", "Contact"],
-  Resources: ["Documentation", "API Reference", "Status", "Support"],
-  Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
+  Products: [
+    { label: "Pentmini", href: "/products" },
+    { label: "Penthost", href: "/products" },
+    { label: "Pentapay", href: "/products" },
+    { label: "AcadSuite", href: "/products" },
+    { label: "NerdClip", href: "/products" },
+  ],
+  Company: [
+    { label: "About Us", href: "/about" },
+    { label: "Careers", href: "/careers" },
+    { label: "Blog", href: "/blog" },
+    { label: "Contact", href: "/contact" },
+  ],
+  Resources: [
+    { label: "Services", href: "/services" },
+    { label: "Products", href: "/products" },
+  ],
+  Legal: [
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Service", href: "/terms" },
+  ],
 };
 
 const Footer = () => {
   return (
-    <footer className="bg-[hsl(220_72%_12%)] text-primary-foreground py-16">
+    <footer className="bg-[hsl(220_72%_8%)] text-primary-foreground py-16">
       <div className="max-w-7xl mx-auto section-padding">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
           <div className="col-span-2 md:col-span-1">
@@ -26,13 +44,13 @@ const Footer = () => {
               <h4 className="font-semibold text-sm mb-4">{title}</h4>
               <ul className="space-y-2.5">
                 {links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
+                  <li key={link.label}>
+                    <Link
+                      to={link.href}
                       className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors"
                     >
-                      {link}
-                    </a>
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>

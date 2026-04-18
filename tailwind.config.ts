@@ -57,6 +57,9 @@ export default {
           accent: "hsl(var(--brand-accent))",
           red: "hsl(var(--brand-red))",
           green: "hsl(var(--brand-green))",
+          blue: "hsl(var(--brand-blue))",
+          deep: "hsl(var(--brand-deep))",
+          highlight: "hsl(var(--brand-highlight))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

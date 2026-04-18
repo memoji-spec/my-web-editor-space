@@ -34,7 +34,10 @@
     --input: 220 13% 91%;
     --ring: 220 72% 20%;
 
-    --radius: 0.75rem;
+    --radius: 3px;
+    --brand-blue: 218 89% 52%;
+    --brand-deep: 222 89% 20%;
+    --brand-highlight: 213 94% 75%;
 
     --brand: 220 72% 20%;
     --brand-light: 220 60% 96%;
@@ -67,6 +70,17 @@
 
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Global smooth image hover-zoom */
+  .img-zoom {
+    @apply overflow-hidden;
+  }
+  .img-zoom img {
+    @apply transition-transform duration-700 ease-out;
+  }
+  .img-zoom:hover img {
+    transform: scale(1.06);
   }
 }
 

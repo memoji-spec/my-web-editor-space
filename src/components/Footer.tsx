@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
+import { Linkedin, Twitter, Instagram } from "lucide-react";
 import logoWhite from "@/assets/pentagonware-logo-white.png";
 
 const footerLinks = {
   Products: [
-    { label: "Pentmini", href: "/products" },
-    { label: "Penthost", href: "/products" },
+    { label: "Nerdclip", href: "/products" },
+    { label: "InvoicePent", href: "/products" },
+    { label: "Pentimage", href: "/products" },
     { label: "Pentapay", href: "/products" },
-    { label: "AcadSuite", href: "/products" },
-    { label: "NerdClip", href: "/products" },
   ],
   Company: [
     { label: "About Us", href: "/about" },
@@ -24,6 +24,20 @@ const footerLinks = {
     { label: "Terms of Service", href: "/terms" },
   ],
 };
+
+const socials = [
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/pentagonware-technologies/",
+    Icon: Linkedin,
+  },
+  { label: "X", href: "https://x.com/pentagonware", Icon: Twitter },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/pentagonware",
+    Icon: Instagram,
+  },
+];
 
 const Footer = () => {
   return (
@@ -62,14 +76,17 @@ const Footer = () => {
           <p className="text-xs text-primary-foreground/40">
             © {new Date().getFullYear()} Pentagonware Technologies. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            {["LinkedIn", "Twitter", "GitHub"].map((social) => (
+          <div className="flex gap-4">
+            {socials.map(({ label, href, Icon }) => (
               <a
-                key={social}
-                href="#"
-                className="text-xs text-primary-foreground/40 hover:text-primary-foreground transition-colors"
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="w-9 h-9 rounded-[3px] border border-primary-foreground/15 flex items-center justify-center text-primary-foreground/60 hover:text-primary-foreground hover:border-primary-foreground/40 transition-colors"
               >
-                {social}
+                <Icon size={16} />
               </a>
             ))}
           </div>

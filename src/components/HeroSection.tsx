@@ -3,10 +3,19 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import DottedSurface from "@/components/DottedSurface";
 import { Link } from "react-router-dom";
+import heroBg from "@/assets/hero-background.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-background pt-10 md:pt-14">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-10 md:pt-14">
+      {/* Figma background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      />
+      {/* Soft white wash to keep text crisp */}
+      <div className="absolute inset-0 bg-background/40" />
+      {/* Three.js dotted overlay */}
       <DottedSurface />
 
       <div className="relative z-20 flex flex-col items-center text-center max-w-5xl mx-auto px-6">
@@ -14,7 +23,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl leading-[1.08] text-brand"
+          className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-foreground"
           style={{ letterSpacing: "-0.03em" }}
         >
           Engineering the
@@ -28,7 +37,7 @@ const HeroSection = () => {
           >
             Digital
           </motion.span>
-          <span className="text-brand">.</span>
+          <span className="text-foreground">.</span>
         </motion.h1>
 
         <motion.p
@@ -48,7 +57,10 @@ const HeroSection = () => {
           className="mt-10 flex flex-wrap justify-center gap-4"
         >
           <Link to="/products">
-            <Button size="lg" className="gap-2 px-8 py-6 text-base bg-brand text-primary-foreground hover:bg-brand/90 rounded-lg font-bold shadow-lg shadow-brand/25 transition-all duration-300 hover:shadow-xl hover:shadow-brand/30 hover:scale-[1.02]">
+            <Button
+              size="lg"
+              className="gap-2 px-8 py-6 text-base bg-brand-blue text-primary-foreground hover:bg-brand-blue/90 rounded-[3px] font-bold shadow-lg shadow-brand-blue/25 transition-all duration-300 hover:shadow-xl hover:shadow-brand-blue/30 hover:scale-[1.02]"
+            >
               Explore Our Ecosystem <ArrowRight size={16} />
             </Button>
           </Link>
@@ -64,12 +76,12 @@ const HeroSection = () => {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-1.5"
+          className="w-6 h-10 rounded-full border-2 border-muted-foreground/40 flex items-start justify-center p-1.5"
         >
           <motion.div
             animate={{ opacity: [0.3, 1, 0.3], scaleY: [0.5, 1, 0.5] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="w-1 h-2.5 rounded-full bg-muted-foreground/50"
+            className="w-1 h-2.5 rounded-full bg-muted-foreground/60"
           />
         </motion.div>
       </motion.div>

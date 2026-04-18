@@ -1,60 +1,40 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Sparkles, Server, CreditCard, GraduationCap, ArrowUpRight } from "lucide-react";
-import aiStudioSvg from "@/assets/pentagonware-ai-studio.svg";
-import hostingSvg from "@/assets/pentagonware-hosting.svg";
-import paySvg from "@/assets/pentagonware-pay.svg";
-import academicSuiteSvg from "@/assets/pentagonware-academic-suite.svg";
-import { useInView } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import nerdclipImg from "@/assets/ecosystem-nerdclip.jpg";
+import invoicepentImg from "@/assets/ecosystem-invoicepent.jpg";
+import pentimageImg from "@/assets/ecosystem-pentimage.jpg";
+import pentapayImg from "@/assets/ecosystem-pentapay.jpg";
 
 const products = [
   {
-    icon: Sparkles,
-    title: "Pentmini 2.0",
-    description: "Generate hyper realistic images of yourself and studio ready images without a single prompt.",
-    bg: "bg-[#1a1035]",
-    textColor: "text-primary-foreground",
-    descColor: "text-primary-foreground/70",
-    iconBg: "bg-purple-500/20",
-    iconColor: "text-purple-300",
-    illustration: aiStudioSvg,
-    illustrationClass: "right-[-25%] md:right-[-25%] w-[55%] md:w-[55%]",
+    title: "Nerdclip",
+    tag: "Academic",
+    description:
+      "A platform built for educators and students — streamlining lectures, assignments, and academic workflows.",
+    image: nerdclipImg,
   },
   {
-    icon: Server,
-    title: "Penthost",
-    description: "Secure, scalable, and lightning-fast hosting solutions engineered for optimal website and application performance.",
-    bg: "bg-brand-accent",
-    textColor: "text-primary-foreground",
-    descColor: "text-primary-foreground/70",
-    iconBg: "bg-blue-300/20",
-    iconColor: "text-blue-200",
-    illustration: hostingSvg,
-    illustrationClass: "right-[-30%] md:right-[-20%] w-[70%] md:w-[60%]",
+    title: "InvoicePent",
+    tag: "Finance",
+    description:
+      "Effortless invoicing and receipts. Send branded documents and track payments in one organised place.",
+    image: invoicepentImg,
   },
   {
-    icon: CreditCard,
+    title: "Pentimage",
+    tag: "AI Studio",
+    description:
+      "Transform rough shots into hyper-realistic studio imagery with a single click. Powered by Pentagonware AI.",
+    image: pentimageImg,
+  },
+  {
     title: "Pentapay",
-    description: "Integrate robust payment processing with ease. Our gateway ensures secure, efficient, and reliable financial operations.",
-    bg: "bg-[#e8daf0]",
-    textColor: "text-[#9b3a6a]",
-    descColor: "text-[#9b3a6a]/70",
-    iconBg: "bg-[#C74888]/15",
-    iconColor: "text-[#C74888]",
-    illustration: paySvg,
-    illustrationClass: "right-[-15%] w-[55%]",
-  },
-  {
-    icon: GraduationCap,
-    title: "AcadSuite",
-    description: "A comprehensive platform for modern education, streamlining administration and enhancing learning.",
-    bg: "bg-[#181233]",
-    textColor: "text-primary-foreground",
-    descColor: "text-primary-foreground/70",
-    iconBg: "bg-blue-400/20",
-    iconColor: "text-blue-300",
-    illustration: academicSuiteSvg,
-    illustrationClass: "right-[-20%] w-[60%]",
+    tag: "Payments",
+    description:
+      "Secure, fast, and reliable payment infrastructure for businesses of every size.",
+    image: pentapayImg,
   },
 ];
 
@@ -63,70 +43,70 @@ const ProductsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="products" className="relative py-24 md:py-32 bg-background overflow-hidden">
+    <section
+      id="products"
+      className="relative py-24 md:py-32 bg-background overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto section-padding relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-14"
+          className="mb-14 max-w-3xl"
         >
-          <motion.p
-            initial={{ opacity: 0, x: -20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5 }}
-            className="text-sm font-semibold tracking-widest uppercase mb-3 text-accent"
-          >
+          <p className="text-sm font-semibold tracking-widest uppercase mb-3 text-brand-blue">
             Our Ecosystem
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display font-extrabold text-3xl md:text-4xl text-foreground max-w-2xl"
-          >
-            Integrated software solutions and intelligent systems designed for modern business operations and user needs.
-          </motion.h2>
+          </p>
+          <h2 className="font-display font-extrabold text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight">
+            Integrated software solutions designed for{" "}
+            <span className="text-brand-highlight">modern business</span>{" "}
+            and user needs.
+          </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {products.map((product, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {products.map((p, index) => (
             <motion.div
-              key={product.title}
+              key={p.title}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.1 * index, ease: [0.16, 1, 0.3, 1] }}
-              whileHover={{ y: -4, transition: { duration: 0.25 } }}
-              className={`${product.bg} relative rounded-3xl overflow-hidden group cursor-pointer`}
+              transition={{
+                duration: 0.6,
+                delay: 0.1 * index,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className="group cursor-pointer rounded-[3px] overflow-hidden bg-card border border-border/60 hover:border-brand-blue/40 transition-colors"
             >
-              <div className={`absolute top-0 h-full flex items-center pointer-events-none ${product.illustrationClass}`}>
+              <div className="img-zoom relative aspect-[16/10] bg-muted">
                 <img
-                  src={product.illustration}
-                  alt=""
-                  className="h-[120%] w-auto object-contain opacity-80 group-hover:scale-105 transition-transform duration-500"
+                  src={p.image}
+                  alt={p.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
                 />
+                <span className="absolute top-4 left-4 text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-[3px] bg-background/90 backdrop-blur-sm text-brand-blue">
+                  {p.tag}
+                </span>
               </div>
 
-              <div className="relative z-10 p-8 md:p-10 flex flex-col justify-between min-h-[320px]">
-                <div className="flex items-center justify-between">
-                  <div className={`w-11 h-11 rounded-xl ${product.iconBg} flex items-center justify-center ${product.iconColor}`}>
-                    <product.icon size={22} />
-                  </div>
-                  <div className={`w-9 h-9 rounded-full border border-current/20 flex items-center justify-center ${product.descColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
-                    <ArrowUpRight size={16} />
-                  </div>
-                </div>
-
-                <div className="mt-auto space-y-2 max-w-[55%]">
-                  <h3 className={`font-display font-bold text-xl md:text-2xl ${product.textColor}`}>
-                    {product.title}
+              <div className="p-7 md:p-8 flex items-start justify-between gap-6">
+                <div className="space-y-2 flex-1">
+                  <h3 className="font-display font-bold text-2xl text-foreground">
+                    {p.title}
                   </h3>
-                  <p className={`text-sm leading-relaxed ${product.descColor}`}>
-                    {product.description}
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {p.description}
                   </p>
                 </div>
+                <Link
+                  to="/products"
+                  aria-label={`Learn more about ${p.title}`}
+                  className="shrink-0 w-11 h-11 rounded-[3px] bg-brand-highlight/20 text-brand-blue flex items-center justify-center group-hover:bg-brand-blue group-hover:text-primary-foreground transition-colors"
+                >
+                  <ArrowUpRight size={18} />
+                </Link>
               </div>
             </motion.div>
           ))}

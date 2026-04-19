@@ -7,16 +7,14 @@ import heroBg from "@/assets/hero-background.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[88vh] md:min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Figma background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
+    <section
+      className="relative min-h-[88vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center"
+      style={{ backgroundImage: `url(${heroBg})`, backgroundColor: "#0a1538" }}
+    >
       {/* Three.js dotted overlay (sits on lower half visually) */}
       <DottedSurface />
 
-      <div className="relative z-20 flex flex-col items-center text-center max-w-4xl mx-auto px-6 -mt-20 md:-mt-28">
+      <div className="relative z-20 flex flex-col items-center text-center max-w-5xl mx-auto px-6 -mt-32 md:-mt-40">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -35,10 +33,11 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed"
+          className="mt-6 text-base md:text-lg text-muted-foreground max-w-3xl leading-relaxed"
         >
-          Pentagonware builds intelligent, AI-powered products and bespoke solutions
-          that simplify complexity and drive scalable growth.
+          Pentagonware builds intelligent, AI-powered products and bespoke
+          <br className="hidden md:block" />
+          {" "}solutions that simplify complexity and drive scalable growth.
         </motion.p>
 
         <motion.div

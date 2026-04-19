@@ -10,9 +10,9 @@ const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7];
 
 const TrustedBySection = () => {
   return (
-    <section className="py-14" style={{ backgroundColor: "#FAFAFA" }}>
+    <section className="py-6 md:py-8" style={{ backgroundColor: "#FAFAFA" }}>
       <div className="max-w-7xl mx-auto section-padding">
-        <p className="text-xs font-semibold tracking-[0.25em] uppercase text-center text-muted-foreground mb-8">
+        <p className="text-[11px] font-semibold tracking-[0.25em] uppercase text-center text-muted-foreground mb-4">
           Trusted by
         </p>
         <div className="relative overflow-hidden">
@@ -22,13 +22,13 @@ const TrustedBySection = () => {
             {[...logos, ...logos, ...logos].map((logo, i) => (
               <div
                 key={i}
-                className="flex-shrink-0 mx-10 flex items-center justify-center h-12"
+                className="flex-shrink-0 mx-8 flex items-center justify-center h-10"
               >
                 <img
                   src={logo}
                   alt="Partner logo"
                   loading="lazy"
-                  className="h-8 md:h-10 w-auto object-contain grayscale opacity-70 hover:opacity-100 transition-opacity duration-300"
+                  className="h-6 md:h-8 w-auto object-contain grayscale opacity-70 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
                 />
               </div>
             ))}

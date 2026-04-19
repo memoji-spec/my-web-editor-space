@@ -7,18 +7,16 @@ import heroBg from "@/assets/hero-background.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-10 md:pt-14">
+    <section className="relative min-h-[88vh] md:min-h-screen flex items-center justify-center overflow-hidden">
       {/* Figma background image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroBg})` }}
       />
-      {/* Soft white wash to keep text crisp */}
-      <div className="absolute inset-0 bg-background/40" />
-      {/* Three.js dotted overlay */}
+      {/* Three.js dotted overlay (sits on lower half visually) */}
       <DottedSurface />
 
-      <div className="relative z-20 flex flex-col items-center text-center max-w-5xl mx-auto px-6">
+      <div className="relative z-20 flex flex-col items-center text-center max-w-4xl mx-auto px-6 -mt-20 md:-mt-28">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -29,15 +27,8 @@ const HeroSection = () => {
           Engineering the
           <br />
           Future of{" "}
-          <motion.span
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="text-brand-red"
-          >
-            Digital
-          </motion.span>
-          <span className="text-foreground">.</span>
+          <span style={{ color: "#D61F1F" }}>Digital</span>
+          <span className="text-foreground">...</span>
         </motion.h1>
 
         <motion.p
@@ -54,37 +45,19 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-10 flex flex-wrap justify-center gap-4"
+          className="mt-8"
         >
           <Link to="/products">
             <Button
               size="lg"
-              className="gap-2 px-8 py-6 text-base bg-brand-blue text-primary-foreground hover:bg-brand-blue/90 rounded-[3px] font-bold shadow-lg shadow-brand-blue/25 transition-all duration-300 hover:shadow-xl hover:shadow-brand-blue/30 hover:scale-[1.02]"
+              className="gap-2 px-8 py-6 text-base text-primary-foreground rounded-[3px] font-semibold shadow-lg transition-all duration-300 hover:scale-[1.02]"
+              style={{ backgroundColor: "#1F63ED" }}
             >
               Explore Our Ecosystem <ArrowRight size={16} />
             </Button>
           </Link>
         </motion.div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          className="w-6 h-10 rounded-full border-2 border-muted-foreground/40 flex items-start justify-center p-1.5"
-        >
-          <motion.div
-            animate={{ opacity: [0.3, 1, 0.3], scaleY: [0.5, 1, 0.5] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="w-1 h-2.5 rounded-full bg-muted-foreground/60"
-          />
-        </motion.div>
-      </motion.div>
     </section>
   );
 };

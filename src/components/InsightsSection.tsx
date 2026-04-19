@@ -14,7 +14,7 @@ const articles: Article[] = [
   {
     title: "The Future of Generative AI in Enterprise",
     description: "How generative AI is reshaping enterprise workflows.",
-    year: "2024",
+    year: "2026",
     link: "/blog",
     image:
       "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&h=600&fit=crop",
@@ -22,7 +22,7 @@ const articles: Article[] = [
   {
     title: "Scaling Infrastructure for Modern Applications",
     description: "Best practices for scalable, reliable infrastructure.",
-    year: "2024",
+    year: "2026",
     link: "/blog",
     image:
       "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&h=600&fit=crop",
@@ -61,15 +61,15 @@ const InsightsSection = () => {
 
   return (
     <section id="insights" className="py-24 md:py-32" style={{ backgroundColor: "#EEEEEE" }}>
-      <div className="max-w-7xl mx-auto section-padding">
-        <div className="mb-12 max-w-3xl">
+      <div className="max-w-3xl mx-auto section-padding">
+        <div className="mb-12">
           <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-brand-blue">
             Insights
           </p>
           <h2 className="font-display font-extrabold text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight">
             Trending Insights
           </h2>
-          <p className="mt-4 text-base text-muted-foreground max-w-xl">
+          <p className="mt-4 text-base text-muted-foreground">
             Stay ahead of the curve with the latest perspectives on AI-powered
             innovation and digital transformation.
           </p>
@@ -78,7 +78,7 @@ const InsightsSection = () => {
         <section
           ref={containerRef}
           onMouseMove={handleMouseMove}
-          className="relative w-full max-w-3xl mx-auto"
+          className="relative w-full"
         >
           <div
             className="pointer-events-none fixed z-50 overflow-hidden rounded-[3px] shadow-2xl hidden md:block"

@@ -67,11 +67,14 @@ const ProductsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: 0.08 * index, ease: [0.16, 1, 0.3, 1] }}
-              className="rounded-[3px] overflow-hidden p-7 md:p-9 flex flex-col justify-between min-h-[440px]"
+              className="rounded-[10px] overflow-hidden p-7 md:p-9 flex flex-col justify-between min-h-[440px]"
               style={{ backgroundColor: "#062161" }}
             >
               <div>
-                <h3 className="font-display font-bold text-2xl text-primary-foreground mb-3">
+                <h3
+                  className="font-display font-light text-xs tracking-wide mb-3"
+                  style={{ color: "#93C5FD" }}
+                >
                   {p.name}
                 </h3>
                 <p className="font-display font-semibold text-2xl md:text-[26px] leading-snug text-primary-foreground max-w-sm">
@@ -88,7 +91,7 @@ const ProductsSection = () => {
                 </Link>
               </div>
 
-              <div className="img-zoom mt-6 rounded-[3px] overflow-hidden">
+              <div className="img-zoom mt-6 rounded-[10px] overflow-hidden">
                 <img
                   src={p.image}
                   alt={p.name}

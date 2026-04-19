@@ -6,12 +6,10 @@ import { Menu, X, ChevronDown, Sparkles, Server, CreditCard, GraduationCap, Clip
 import logo from "@/assets/pentagonware-logo.png";
 
 const products = [
-  { label: "Pentmini", icon: Sparkles, href: "/products" },
-  { label: "Penthost", icon: Server, href: "/products" },
-  { label: "Pentapay", icon: CreditCard, href: "/products" },
-  { label: "AcadSuite", icon: GraduationCap, href: "/products" },
   { label: "NerdClip", icon: Clipboard, href: "/products" },
-  { label: "Pentapay", icon: Globe, href: "/products" },
+  { label: "PentPic", icon: Sparkles, href: "/products" },
+  { label: "InvoicePent", icon: Globe, href: "/products" },
+  { label: "PentaPay", icon: CreditCard, href: "/products" },
 ];
 
 const navLinks = [
@@ -97,7 +95,11 @@ const Navbar = () => {
 
         <div className="hidden md:block">
           <Link to="/contact">
-            <Button size="sm" className="bg-brand text-primary-foreground hover:bg-brand/90 rounded-lg font-bold shadow-lg shadow-brand/25 transition-all duration-300 hover:shadow-xl hover:shadow-brand/30 hover:scale-[1.02]">
+            <Button
+              size="sm"
+              className="text-primary-foreground rounded-[3px] font-bold transition-all duration-300 hover:scale-[1.02] hover:opacity-95"
+              style={{ backgroundColor: "#1F63ED" }}
+            >
               Contact Us
             </Button>
           </Link>
@@ -131,7 +133,11 @@ const Navbar = () => {
                 </Link>
               ))}
               <Link to="/contact" onClick={() => setIsOpen(false)}>
-                <Button size="sm" className="mt-2 w-full bg-brand text-primary-foreground hover:bg-brand/90 rounded-lg font-bold">
+                <Button
+                  size="sm"
+                  className="mt-2 w-full text-primary-foreground rounded-[3px] font-bold"
+                  style={{ backgroundColor: "#1F63ED" }}
+                >
                   Contact Us
                 </Button>
               </Link>

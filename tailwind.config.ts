@@ -109,7 +109,7 @@ export default {
         "fade-up": "fade-up 0.7s ease-out forwards",
         "fade-in": "fade-in 0.5s ease-out forwards",
         "float": "float 6s ease-in-out infinite",
-        "scroll-logos": "scroll-logos 18s linear infinite",
+        "scroll-logos": "scroll-logos 12s linear infinite",
       },
     },
   },

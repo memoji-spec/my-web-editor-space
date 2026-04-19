@@ -2,9 +2,12 @@ import { motion } from "framer-motion";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import ProductsSection from "@/components/ProductsSection";
 import TrustedBySection from "@/components/TrustedBySection";
+import ProductsSection from "@/components/ProductsSection";
 import CustomEngineeringSection from "@/components/CustomEngineeringSection";
+import PicCollageSection from "@/components/PicCollageSection";
+import ConsultingReliabilitySection from "@/components/ConsultingReliabilitySection";
+import NutshellSection from "@/components/NutshellSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import InsightsSection from "@/components/InsightsSection";
@@ -25,6 +28,9 @@ const Index = () => {
       {[
         ProductsSection,
         CustomEngineeringSection,
+        PicCollageSection,
+        ConsultingReliabilitySection,
+        NutshellSection,
         TestimonialsSection,
         CTASection,
         InsightsSection,

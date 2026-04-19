@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import whatWeDoImg from "@/assets/what-we-do.png";
+import whatWeDoDesktop from "@/assets/what-we-do-desktop.png";
+import whatWeDoMobile from "@/assets/what-we-do-mobile.png";
 
 const pillars = [
   {
@@ -98,12 +99,18 @@ const CustomEngineeringSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="img-zoom relative rounded-[3px] overflow-hidden border border-primary-foreground/10 order-2 aspect-square lg:aspect-auto lg:h-[520px]"
+            className="img-zoom relative rounded-[14px] overflow-hidden border border-primary-foreground/10 order-2 aspect-square lg:aspect-auto lg:h-[560px]"
           >
             <img
-              src={whatWeDoImg}
+              src={whatWeDoMobile}
               alt="Pentagonware custom engineering"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover lg:hidden"
+              loading="lazy"
+            />
+            <img
+              src={whatWeDoDesktop}
+              alt="Pentagonware custom engineering"
+              className="w-full h-full object-cover hidden lg:block"
               loading="lazy"
             />
           </motion.div>

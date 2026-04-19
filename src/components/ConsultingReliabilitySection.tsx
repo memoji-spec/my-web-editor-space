@@ -44,9 +44,23 @@ const ConsultingReliabilitySection = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center"
           >
+            {/* Mobile-only eyebrow shown above image */}
+            <p className="md:hidden text-xs font-semibold tracking-[0.25em] uppercase text-brand-blue order-1">
+              {b.eyebrow}
+            </p>
+
+            {/* Image */}
+            <div
+              className={`img-zoom rounded-[3px] overflow-hidden aspect-[4/3] order-2 ${
+                b.reverse ? "md:order-1" : "md:order-2"
+              }`}
+            >
+              <img src={b.image} alt={b.imageAlt} loading="lazy" className="w-full h-full object-cover" />
+            </div>
+
             {/* Text */}
-            <div className={`${b.reverse ? "md:order-2" : "md:order-1"} order-3 md:order-none`}>
-              <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-brand-blue order-1 md:order-none">
+            <div className={`order-3 md:order-none ${b.reverse ? "md:order-2" : "md:order-1"}`}>
+              <p className="hidden md:block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-brand-blue">
                 {b.eyebrow}
               </p>
               <h2 className="font-display font-extrabold text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight whitespace-pre-line">
@@ -63,20 +77,6 @@ const ConsultingReliabilitySection = () => {
                   Get free Consultation
                 </Button>
               </Link>
-            </div>
-
-            {/* Mobile-only eyebrow shown above image */}
-            <p className="md:hidden text-xs font-semibold tracking-[0.25em] uppercase text-brand-blue order-1">
-              {b.eyebrow}
-            </p>
-
-            {/* Image */}
-            <div
-              className={`img-zoom rounded-[3px] overflow-hidden aspect-[4/3] order-2 ${
-                b.reverse ? "md:order-1" : "md:order-2"
-              }`}
-            >
-              <img src={b.image} alt={b.imageAlt} loading="lazy" className="w-full h-full object-cover" />
             </div>
           </motion.div>
         ))}

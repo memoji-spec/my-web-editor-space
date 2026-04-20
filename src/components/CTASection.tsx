@@ -11,14 +11,7 @@ const CTASection = () => {
           className="relative overflow-hidden py-20 md:py-24 px-8 md:px-16"
           style={{ backgroundColor: "#1664F0", borderRadius: "24px" }}
         >
-          <div
-            className="absolute inset-0 opacity-[0.10]"
-            style={{
-              backgroundImage:
-                "radial-gradient(hsl(0 0% 100%) 1px, transparent 1px)",
-              backgroundSize: "32px 32px",
-            }}
-          />
+
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}

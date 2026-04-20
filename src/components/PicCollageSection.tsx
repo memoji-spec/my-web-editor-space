@@ -9,7 +9,7 @@ const PicCollageSection = () => {
     <section className="py-20 md:py-24 bg-background">
       <div className="max-w-7xl mx-auto section-padding">
         <div className="grid grid-cols-2 md:grid-cols-3 grid-rows-2 gap-4 md:gap-5 md:h-[560px]">
-          {/* 1: Experienced field experts — tall, spans 2 rows */}
+          {/* LEFT: Experienced field Experts — tall, spans 2 rows (p5: coder image) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -17,19 +17,19 @@ const PicCollageSection = () => {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="img-zoom relative rounded-[14px] overflow-hidden row-span-2 col-span-1 aspect-[3/4] md:aspect-auto md:h-full"
           >
-            <img src={p2} alt="Experienced field experts" className="w-full h-full object-cover" loading="lazy" />
+            <img src={p5} alt="Experienced field experts" className="w-full h-full object-cover" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
             <div className="absolute bottom-5 left-5 right-5">
-              <p className="font-display font-medium text-sm md:text-base mb-1" style={{ color: "#E8B84A" }}>
+              <p className="font-display font-medium text-sm md:text-base mb-1" style={{ color: "#FFD629" }}>
                 Experienced field
               </p>
-              <p className="text-primary-foreground font-display font-extrabold text-3xl md:text-5xl leading-none">
+              <p className="text-primary-foreground font-display font-bold text-3xl md:text-5xl leading-none">
                 Experts
               </p>
             </div>
           </motion.div>
 
-          {/* 2: 54+ Projects completed — top middle */}
+          {/* MIDDLE TOP: 54+ Projects completed (p3: blue flag) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -38,14 +38,16 @@ const PicCollageSection = () => {
             className="img-zoom relative rounded-[14px] overflow-hidden col-span-1 aspect-square md:aspect-auto md:h-full"
           >
             <img src={p3} alt="54+ Projects completed" className="w-full h-full object-cover" loading="lazy" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent" />
-            <div className="absolute bottom-5 left-5 right-5 text-primary-foreground">
-              <p className="font-display font-extrabold text-4xl md:text-5xl leading-none">54+</p>
-              <p className="font-display font-normal text-sm md:text-base mt-1 opacity-90">Projects Completed</p>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+            <div className="absolute bottom-5 left-5 right-5">
+              <p className="text-primary-foreground font-display font-bold text-4xl md:text-5xl leading-none">54+</p>
+              <p className="font-display font-normal text-sm md:text-base mt-1" style={{ color: "#93C5FD" }}>
+                Projects Completed
+              </p>
             </div>
           </motion.div>
 
-          {/* 3: 95% customer satisfaction — tall right, spans 2 rows */}
+          {/* RIGHT: 95% customer satisfaction — tall, spans 2 rows (p4: column) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -53,15 +55,15 @@ const PicCollageSection = () => {
             transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="img-zoom relative rounded-[14px] overflow-hidden row-span-2 col-span-1 aspect-[3/4] md:aspect-auto md:h-full"
           >
-            <img src={p5} alt="95% customer satisfaction" className="w-full h-full object-cover" loading="lazy" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+            <img src={p4} alt="95% customer satisfaction" className="w-full h-full object-cover" loading="lazy" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
             <div className="absolute bottom-5 left-5 right-5 text-primary-foreground">
-              <p className="font-display font-extrabold text-4xl md:text-5xl leading-none">95%</p>
-              <p className="font-display font-normal text-sm md:text-base mt-1 opacity-90">Customer satisfaction</p>
+              <p className="font-display font-bold text-4xl md:text-5xl leading-none">95%</p>
+              <p className="font-display font-normal text-sm md:text-base mt-1">Customer satisfaction</p>
             </div>
           </motion.div>
 
-          {/* 4: Portrait — bottom middle */}
+          {/* MIDDLE BOTTOM: Portrait, no text (p2) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -69,7 +71,7 @@ const PicCollageSection = () => {
             transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="img-zoom relative rounded-[14px] overflow-hidden col-span-1 aspect-square md:aspect-auto md:h-full md:col-start-2 md:row-start-2"
           >
-            <img src={p4} alt="Pentagonware team" className="w-full h-full object-cover" loading="lazy" />
+            <img src={p2} alt="Pentagonware team" className="w-full h-full object-cover" loading="lazy" />
           </motion.div>
         </div>
       </div>

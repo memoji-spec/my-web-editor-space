@@ -83,7 +83,7 @@ const ProductsSection = () => {
                 </p>
                 <Link to="/products" className="inline-block mt-6">
                   <Button
-                    className="rounded-[3px] text-primary-foreground font-semibold px-5"
+                    className="rounded-[3px] text-primary-foreground font-semibold px-5 transition-all duration-300 hover:scale-[1.03] hover:brightness-110 hover:shadow-lg"
                     style={{ backgroundColor: "#1F63ED" }}
                   >
                     Learn more

@@ -32,14 +32,7 @@ const CustomEngineeringSection = () => {
         background: "linear-gradient(180deg, #062161 0%, #02112E 60%, #000000 100%)",
       }}
     >
-      <div
-        className="absolute inset-0 opacity-[0.06] pointer-events-none"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 1px 1px, hsl(0 0% 100%) 1px, transparent 0)",
-          backgroundSize: "32px 32px",
-        }}
-      />
+
 
       <div className="relative z-10 max-w-7xl mx-auto section-padding">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">

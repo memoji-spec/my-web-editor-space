@@ -7,7 +7,7 @@ const reviews = [
     quote:
       "NerdClip has made it much easier to organize my academic work in one place. I can manage my courses, share my research, and keep everything structured without relying on multiple tools. It's simple, practical, and actually useful.",
     name: "Professor Ayorinde",
-    role: "Computing, University of Ibadan",
+    role: "Department of Computer Science, University of Ibadan",
   },
   {
     quote:

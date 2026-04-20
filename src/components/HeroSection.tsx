@@ -8,11 +8,19 @@ import heroBg from "@/assets/hero-background.jpg";
 const HeroSection = () => {
   return (
     <section
-      className="relative min-h-[88vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center"
-      style={{ backgroundImage: `url(${heroBg})`, backgroundColor: "#EAF0FA" }}
+      className="relative min-h-[88vh] md:min-h-screen flex items-center justify-center overflow-hidden"
+      style={{ backgroundColor: "#EAF0FA" }}
     >
-      {/* Preload hint to ensure background appears with first paint */}
-      <link rel="preload" as="image" href={heroBg} />
+      {/* Eager background image — loads with the page, no flash */}
+      <img
+        src={heroBg}
+        alt=""
+        aria-hidden="true"
+        fetchPriority="high"
+        decoding="sync"
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      />
+
       {/* Three.js dotted overlay (sits on lower half visually) */}
       <DottedSurface />
 

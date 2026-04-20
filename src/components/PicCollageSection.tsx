@@ -8,7 +8,7 @@ const PicCollageSection = () => {
   return (
     <section className="py-20 md:py-24 bg-background">
       <div className="max-w-7xl mx-auto section-padding">
-        <div className="grid grid-cols-2 md:grid-cols-3 grid-rows-2 gap-4 md:gap-5 md:h-[560px]">
+        <div className="grid grid-cols-2 grid-rows-[auto_auto] md:grid-cols-3 md:grid-rows-2 gap-4 md:gap-5 md:h-[560px] auto-rows-fr">
           {/* LEFT: Experienced field Experts — tall, spans 2 rows (p5: coder image) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}

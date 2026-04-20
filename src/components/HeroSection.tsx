@@ -3,14 +3,16 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import DottedSurface from "@/components/DottedSurface";
 import { Link } from "react-router-dom";
-import heroBg from "@/assets/hero-background.png";
+import heroBg from "@/assets/hero-background.jpg";
 
 const HeroSection = () => {
   return (
     <section
-      className="relative min-h-[88vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center md:bg-fixed"
+      className="relative min-h-[88vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center"
       style={{ backgroundImage: `url(${heroBg})`, backgroundColor: "#EAF0FA" }}
     >
+      {/* Preload hint to ensure background appears with first paint */}
+      <link rel="preload" as="image" href={heroBg} />
       {/* Three.js dotted overlay (sits on lower half visually) */}
       <DottedSurface />
 

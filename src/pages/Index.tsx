@@ -12,6 +12,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import InsightsSection from "@/components/InsightsSection";
 import Footer from "@/components/Footer";
+import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -19,6 +20,7 @@ const sectionVariants = {
 };
 
 const Index = () => {
+  useSmoothScroll();
   return (
     <div className="min-h-screen bg-background">
       <AnnouncementBar />

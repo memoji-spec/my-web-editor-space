@@ -49,17 +49,17 @@ const ConsultingReliabilitySection = () => {
               {b.eyebrow}
             </p>
 
-            {/* Image - left for first block, left also for second (alternating reversed via order) */}
+            {/* Image */}
             <div
               className={`img-zoom rounded-[3px] overflow-hidden aspect-[4/3] order-2 ${
-                b.reverse ? "md:order-2" : "md:order-1"
+                b.reverse ? "md:order-1" : "md:order-2"
               }`}
             >
               <img src={b.image} alt={b.imageAlt} loading="lazy" className="w-full h-full object-cover" />
             </div>
 
             {/* Text */}
-            <div className={`order-3 md:order-none ${b.reverse ? "md:order-1" : "md:order-2"}`}>
+            <div className={`order-3 md:order-none ${b.reverse ? "md:order-2" : "md:order-1"}`}>
               <p className="hidden md:block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-brand-blue">
                 {b.eyebrow}
               </p>

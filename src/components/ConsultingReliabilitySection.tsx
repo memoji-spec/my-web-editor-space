@@ -49,17 +49,14 @@ const ConsultingReliabilitySection = () => {
               {b.eyebrow}
             </p>
 
-            {/* Image */}
-            <div
-              className={`img-zoom rounded-[3px] overflow-hidden aspect-[4/3] order-2 ${
-                b.reverse ? "md:order-1" : "md:order-2"
-              }`}
-            >
-              <img src={b.image} alt={b.imageAlt} loading="lazy" className="w-full h-full object-cover" />
-            </div>
-
             {/* Text */}
-            <div className={`order-3 md:order-none ${b.reverse ? "md:order-2" : "md:order-1"}`}>
+            <motion.div
+              initial={{ opacity: 0, x: b.reverse ? 60 : -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              className={`order-3 md:order-none ${b.reverse ? "md:col-start-2" : "md:col-start-1"} md:row-start-1`}
+            >
               <p className="hidden md:block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-brand-blue">
                 {b.eyebrow}
               </p>
@@ -71,13 +68,26 @@ const ConsultingReliabilitySection = () => {
               </p>
               <Link to="/contact" className="inline-block mt-7">
                 <Button
-                  className="rounded-[3px] text-primary-foreground font-semibold px-6 py-5"
+                  className="rounded-[3px] text-primary-foreground font-semibold px-6 py-5 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
                   style={{ backgroundColor: "#1F63ED" }}
                 >
                   Get free Consultation
                 </Button>
               </Link>
-            </div>
+            </motion.div>
+
+            {/* Image */}
+            <motion.div
+              initial={{ opacity: 0, x: b.reverse ? -60 : 60, scale: 0.95 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              className={`img-zoom rounded-[3px] overflow-hidden aspect-[4/3] order-2 ${
+                b.reverse ? "md:col-start-1" : "md:col-start-2"
+              } md:row-start-1`}
+            >
+              <img src={b.image} alt={b.imageAlt} loading="lazy" className="w-full h-full object-cover" />
+            </motion.div>
           </motion.div>
         ))}
       </div>

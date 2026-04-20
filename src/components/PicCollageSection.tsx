@@ -8,14 +8,14 @@ const PicCollageSection = () => {
   return (
     <section className="py-20 md:py-24 bg-background">
       <div className="max-w-7xl mx-auto section-padding">
-        <div className="grid grid-cols-2 grid-rows-[auto_auto] md:grid-cols-3 md:grid-rows-2 gap-4 md:gap-5 md:h-[560px] auto-rows-fr">
-          {/* LEFT: Experienced field Experts — tall, spans 2 rows (p5: coder image) */}
+        <div className="grid grid-cols-2 md:grid-cols-3 grid-rows-[200px_200px_200px] md:grid-rows-2 gap-4 md:gap-5 md:h-[560px]">
+          {/* LEFT: Experienced field Experts — tall, spans 2 rows */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="img-zoom relative rounded-[14px] overflow-hidden row-span-2 col-span-1 aspect-[3/4] md:aspect-auto md:h-full"
+            className="img-zoom relative rounded-[14px] overflow-hidden row-span-2 col-span-1 md:row-span-2 md:h-full"
           >
             <img src={p5} alt="Experienced field experts" className="w-full h-full object-cover" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
@@ -29,13 +29,13 @@ const PicCollageSection = () => {
             </div>
           </motion.div>
 
-          {/* MIDDLE TOP: 54+ Projects completed (p3: blue flag) */}
+          {/* MIDDLE TOP: 54+ Projects completed */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="img-zoom relative rounded-[14px] overflow-hidden col-span-1 aspect-square md:aspect-auto md:h-full"
+            className="img-zoom relative rounded-[14px] overflow-hidden col-span-1 md:h-full"
           >
             <img src={p3} alt="54+ Projects completed" className="w-full h-full object-cover" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
@@ -47,13 +47,13 @@ const PicCollageSection = () => {
             </div>
           </motion.div>
 
-          {/* RIGHT: 95% customer satisfaction — tall, spans 2 rows (p4: column) */}
+          {/* RIGHT (desktop) / second-row right (mobile): 95% — tall on desktop only */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="img-zoom relative rounded-[14px] overflow-hidden row-span-2 col-span-1 aspect-[3/4] md:aspect-auto md:h-full"
+            className="img-zoom relative rounded-[14px] overflow-hidden col-span-1 md:row-span-2 md:col-start-3 md:row-start-1 md:h-full"
           >
             <img src={p4} alt="95% customer satisfaction" className="w-full h-full object-cover" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
@@ -63,13 +63,13 @@ const PicCollageSection = () => {
             </div>
           </motion.div>
 
-          {/* MIDDLE BOTTOM: Portrait, no text (p2) */}
+          {/* MIDDLE BOTTOM: Portrait — full-width on mobile, middle bottom on desktop */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="img-zoom relative rounded-[14px] overflow-hidden col-span-1 aspect-square md:aspect-auto md:h-full md:col-start-2 md:row-start-2"
+            className="img-zoom relative rounded-[14px] overflow-hidden col-span-2 md:col-span-1 md:col-start-2 md:row-start-2 md:h-full"
           >
             <img src={p2} alt="Pentagonware team" className="w-full h-full object-cover" loading="lazy" />
           </motion.div>

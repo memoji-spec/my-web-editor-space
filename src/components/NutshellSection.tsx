@@ -13,7 +13,10 @@ const NutshellSection = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center max-w-3xl mx-auto mb-10"
         >
-          <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight">
+          <h2
+            className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight"
+            style={{ letterSpacing: "-0.05em" }}
+          >
             Pentagonware in a{" "}
             <span style={{ color: "#D12A2A" }}>nutshell.....</span>
           </h2>

@@ -9,7 +9,7 @@ const HeroSection = () => {
   return (
     <section
       className="relative min-h-[88vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center"
-      style={{ backgroundImage: `url(${heroBg})`, backgroundColor: "#0a1538" }}
+      style={{ backgroundImage: `url(${heroBg})`, backgroundColor: "#EAF0FA" }}
     >
       {/* Three.js dotted overlay (sits on lower half visually) */}
       <DottedSurface />

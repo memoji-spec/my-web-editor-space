@@ -8,7 +8,7 @@ import heroBg from "@/assets/hero-background.png";
 const HeroSection = () => {
   return (
     <section
-      className="relative min-h-[88vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center"
+      className="relative min-h-[88vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center md:bg-fixed"
       style={{ backgroundImage: `url(${heroBg})`, backgroundColor: "#EAF0FA" }}
     >
       {/* Three.js dotted overlay (sits on lower half visually) */}

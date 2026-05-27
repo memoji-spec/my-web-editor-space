@@ -145,7 +145,7 @@ const Navbar = () => {
                               ecosystem.
                             </h3>
                             <p className="mt-3 text-sm text-primary-foreground/70 leading-relaxed">
-                              Four products engineered to power your modern business — education, payments, operations, and creative AI.
+                              Four products engineered to power your modern business  education, payments, operations, and creative AI.
                             </p>
                             <div className="mt-5 space-y-3">
                               {[

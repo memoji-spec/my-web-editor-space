@@ -2,144 +2,153 @@ import { motion } from "framer-motion";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Sparkles, Server, CreditCard, GraduationCap, Clipboard, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import aiStudioSvg from "@/assets/pentagonware-ai-studio.svg";
-import hostingSvg from "@/assets/pentagonware-hosting.svg";
-import paySvg from "@/assets/pentagonware-pay.svg";
-import academicSuiteSvg from "@/assets/pentagonware-academic-suite.svg";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+import nerdclipImg from "@/assets/ecosystem/nerdclip.png";
+import invoicepentImg from "@/assets/ecosystem/invoicepent.png";
+import pentimageImg from "@/assets/ecosystem/pentimage.png";
+import pentapayImg from "@/assets/ecosystem/pentapay.png";
 
 const products = [
   {
-    icon: Sparkles,
-    name: "Pentmini 2.0",
-    tagline: "AI-Powered Image Generation",
-    description: "Generate hyper realistic images of yourself and studio ready images without a single prompt. Powered by our proprietary AI models.",
-    features: ["Hyper-realistic generation", "Studio-quality output", "No prompts needed", "Batch processing"],
-    illustration: aiStudioSvg,
-    color: "from-purple-500/10 to-purple-500/5",
+    name: "Nerdclip",
+    tagline: "Platform for modern education",
+    headline: "Run your classrooms, courses, and learners — in one place.",
+    body: "From scheduling to grading and collaboration, Nerdclip is the operating system for modern academic teams.",
+    features: ["Smart scheduling", "Collaboration tools", "Progress tracking", "Parent & staff portals"],
+    image: nerdclipImg,
+    accent: "#062161",
   },
   {
-    icon: Server,
-    name: "Penthost",
-    tagline: "Enterprise Hosting Solutions",
-    description: "Secure, scalable, and lightning-fast hosting solutions engineered for optimal website and application performance.",
-    features: ["99.9% uptime SLA", "Auto-scaling", "Edge CDN", "SSL included"],
-    illustration: hostingSvg,
-    color: "from-blue-500/10 to-blue-500/5",
+    name: "InvoicePent",
+    tagline: "Invoicing, receipts, inventory — all in one",
+    headline: "The back office your small business actually wants to open.",
+    body: "Issue invoices, track payments, manage stock, and keep clean books without juggling five tools.",
+    features: ["Invoicing & receipts", "Inventory tracking", "Tax-ready reports", "Multi-currency"],
+    image: invoicepentImg,
+    accent: "#062161",
   },
   {
-    icon: CreditCard,
-    name: "Pentapay",
-    tagline: "Payment Processing Gateway",
-    description: "Integrate robust payment processing with ease. Our gateway ensures secure, efficient, and reliable financial operations.",
-    features: ["PCI DSS compliant", "Multi-currency", "Real-time analytics", "Fraud detection"],
-    illustration: paySvg,
-    color: "from-pink-500/10 to-pink-500/5",
+    name: "PentPic",
+    tagline: "Studio-grade images without prompts",
+    headline: "Generate hyper-real images of yourself — no prompt engineering required.",
+    body: "Powered by our proprietary models. Upload a few photos and get studio-ready visuals in seconds.",
+    features: ["Hyper-real generation", "Studio quality", "No prompts needed", "Batch export"],
+    image: pentimageImg,
+    accent: "#062161",
   },
   {
-    icon: GraduationCap,
-    name: "AcadSuite",
-    tagline: "Academic Management Platform",
-    description: "A comprehensive platform for modern education, streamlining administration and enhancing learning outcomes.",
-    features: ["Student management", "Automated grading", "Analytics dashboard", "Parent portal"],
-    illustration: academicSuiteSvg,
-    color: "from-indigo-500/10 to-indigo-500/5",
-  },
-  {
-    icon: Clipboard,
-    name: "NerdClip",
-    tagline: "Smart Academic Workflows",
-    description: "Our platform for smarter academic workflows, helping students and educators organize, collaborate, and achieve more.",
-    features: ["Smart scheduling", "Resource sharing", "Collaboration tools", "Progress tracking"],
-    illustration: null,
-    color: "from-teal-500/10 to-teal-500/5",
+    name: "PentaPay",
+    tagline: "Payment gateway tailored for businesses",
+    headline: "Take payments anywhere. Reconcile everything in one ledger.",
+    body: "A modern gateway built for African businesses with global ambitions. PCI-compliant, multi-currency, instant payouts.",
+    features: ["PCI DSS compliant", "Multi-currency", "Realtime analytics", "Fraud detection"],
+    image: pentapayImg,
+    accent: "#062161",
   },
 ];
 
 const Products = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#F5EFE6] text-[#0a0f1f]">
       <AnnouncementBar />
       <Navbar />
 
-      {/* Hero */}
-      <section className="py-24 md:py-32 bg-background">
-        <div className="max-w-7xl mx-auto section-padding text-center">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-sm font-semibold tracking-widest uppercase mb-4 text-accent"
-          >
-            Our Products
-          </motion.p>
+      {/* Hero — Owner inspired, huge bold */}
+      <section className="pt-20 md:pt-28 pb-12 md:pb-20">
+        <div className="max-w-6xl mx-auto section-padding text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-display font-extrabold text-4xl md:text-5xl lg:text-6xl text-foreground"
+            transition={{ duration: 0.8 }}
+            className="font-display font-bold text-5xl md:text-7xl lg:text-[88px] leading-[0.98] tracking-[-0.045em]"
           >
-            Reliable and consistent tools with zero effort
+            Four products engineered <br className="hidden md:block" />
+            to power your <span className="text-[#1F63ED]">modern business.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="mt-6 text-lg text-muted-foreground max-w-3xl mx-auto"
+            transition={{ delay: 0.15 }}
+            className="mt-7 text-lg md:text-xl text-[#0a0f1f]/70 max-w-2xl mx-auto leading-relaxed"
           >
-            Give every department the tailored tools they need to run smooth operations, with no extra development or maintenance.
+            Education, payments, operations, and creative AI — built to work together, ready on day one.
           </motion.p>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="mt-9">
+            <Link to="/contact">
+              <Button size="lg" className="bg-[#062161] hover:bg-[#062161]/90 text-white rounded-lg font-bold gap-2 shadow-none px-7">
+                Get a free demo <ArrowRight size={16} />
+              </Button>
+            </Link>
+          </motion.div>
         </div>
       </section>
 
-      {/* Products */}
-      <section className="pb-24 bg-background">
-        <div className="max-w-7xl mx-auto section-padding space-y-16">
-          {products.map((product, i) => (
+      {/* Product stack */}
+      <section className="pb-24 md:pb-32">
+        <div className="max-w-6xl mx-auto section-padding space-y-8 md:space-y-10">
+          {products.map((p, i) => (
             <motion.div
-              key={product.name}
-              initial={{ opacity: 0, y: 40 }}
+              key={p.name}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className={`rounded-2xl border border-border overflow-hidden bg-gradient-to-br ${product.color}`}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="rounded-[28px] overflow-hidden ring-1 ring-black/5 shadow-[0_30px_80px_-40px_rgba(6,33,97,0.35)]"
+              style={{ backgroundColor: p.accent }}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 md:p-12">
-                <div className="flex flex-col justify-center">
-                  <div className="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center text-brand mb-6">
-                    <product.icon size={24} />
-                  </div>
-                  <p className="text-xs font-semibold tracking-widest uppercase text-accent mb-2">{product.tagline}</p>
-                  <h2 className="font-display font-extrabold text-2xl md:text-3xl text-foreground mb-4">
-                    {product.name}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                <div className="p-10 md:p-14 lg:p-16 flex flex-col justify-center text-white">
+                  <p className="text-xs font-light tracking-wide text-[#93C5FD] mb-4">{p.name}</p>
+                  <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em] max-w-md">
+                    {p.headline}
                   </h2>
-                  <p className="text-muted-foreground leading-relaxed mb-6">{product.description}</p>
-                  <div className="grid grid-cols-2 gap-3 mb-8">
-                    {product.features.map((f) => (
-                      <div key={f} className="flex items-center gap-2 text-sm text-foreground">
-                        <CheckCircle2 size={14} className="text-brand-green shrink-0" />
-                        {f}
-                      </div>
+                  <p className="mt-5 text-white/70 leading-relaxed max-w-md">{p.body}</p>
+                  <ul className="mt-7 grid grid-cols-2 gap-y-2 gap-x-4 max-w-md">
+                    {p.features.map((f) => (
+                      <li key={f} className="flex items-center gap-2 text-sm text-white/85">
+                        <CheckCircle2 size={14} className="text-[#93C5FD] shrink-0" /> {f}
+                      </li>
                     ))}
+                  </ul>
+                  <div className="mt-8">
+                    <Link to="/contact">
+                      <Button className="bg-white text-[#062161] hover:bg-white/90 rounded-lg font-bold gap-2 shadow-none">
+                        Learn more <ArrowRight size={16} />
+                      </Button>
+                    </Link>
                   </div>
-                  <Link to="/contact">
-                    <Button className="bg-brand text-primary-foreground hover:bg-brand/90 rounded-lg font-bold gap-2 w-fit">
-                      Learn More <ArrowRight size={16} />
-                    </Button>
-                  </Link>
                 </div>
-                <div className="flex items-center justify-center">
-                  {product.illustration ? (
-                    <img src={product.illustration} alt={product.name} className="max-h-[300px] w-auto object-contain opacity-80" />
-                  ) : (
-                    <div className="w-full h-[250px] rounded-xl bg-brand/5 border border-border flex items-center justify-center">
-                      <product.icon size={64} className="text-brand/20" />
-                    </div>
-                  )}
+                <div className="relative bg-[#041648] flex items-end justify-center overflow-hidden">
+                  <motion.img
+                    initial={{ scale: 1.05 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.2, ease: "easeOut" }}
+                    src={p.image}
+                    alt={p.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="pb-24">
+        <div className="max-w-5xl mx-auto section-padding">
+          <div className="rounded-3xl p-12 md:p-20 text-center" style={{ background: "linear-gradient(135deg, #1F63ED 0%, #0B4DCC 100%)" }}>
+            <h2 className="font-display font-bold text-4xl md:text-5xl tracking-[-0.04em] text-white">See it in action.</h2>
+            <p className="mt-4 text-white/85 max-w-xl mx-auto">Book a 20-minute walkthrough of the ecosystem with our team.</p>
+            <Link to="/contact">
+              <Button size="lg" className="mt-8 bg-white text-[#0B4DCC] hover:bg-white/90 rounded-lg font-bold gap-2 shadow-none">
+                Get started <ArrowRight size={16} />
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 

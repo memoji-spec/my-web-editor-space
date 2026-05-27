@@ -2,14 +2,62 @@ import { useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, Sparkles, Server, CreditCard, GraduationCap, Clipboard, Globe } from "lucide-react";
+import { Menu, X, ChevronDown, Sparkles, CreditCard, Clipboard, Globe, ArrowRight } from "lucide-react";
 import logo from "@/assets/pentagonware-logo.png";
 
 const products = [
-  { label: "NerdClip", icon: Clipboard, href: "/products" },
-  { label: "PentPic", icon: Sparkles, href: "/products" },
-  { label: "InvoicePent", icon: Globe, href: "/products" },
-  { label: "PentaPay", icon: CreditCard, href: "/products" },
+  {
+    label: "NerdClip",
+    icon: Clipboard,
+    tagline: "Modern education",
+    href: "/products",
+    iconBg: "bg-blue-50",
+    iconColor: "text-blue-600",
+    items: [
+      { title: "Smart Classrooms", desc: "Interactive learning tools" },
+      { title: "Course Library", desc: "Curated educational content" },
+      { title: "Live Sessions", desc: "Real-time virtual classes" },
+    ],
+  },
+  {
+    label: "PentPic",
+    icon: Sparkles,
+    tagline: "AI image generation",
+    href: "/products",
+    iconBg: "bg-orange-50",
+    iconColor: "text-orange-500",
+    items: [
+      { title: "Prompt-Free Mode", desc: "Generate without typing" },
+      { title: "Style Presets", desc: "Curated visual styles" },
+      { title: "High-Res Exports", desc: "Production-ready output" },
+    ],
+  },
+  {
+    label: "InvoicePent",
+    icon: Globe,
+    tagline: "Operations in one",
+    href: "/products",
+    iconBg: "bg-green-50",
+    iconColor: "text-green-600",
+    items: [
+      { title: "Invoicing", desc: "Send and track invoices" },
+      { title: "Inventory", desc: "Stock & catalog management" },
+      { title: "Receipts", desc: "Digital receipts & reports" },
+    ],
+  },
+  {
+    label: "PentaPay",
+    icon: CreditCard,
+    tagline: "Payment gateway",
+    href: "/products",
+    iconBg: "bg-purple-50",
+    iconColor: "text-purple-600",
+    items: [
+      { title: "Checkout", desc: "Frictionless payment flows" },
+      { title: "Payouts", desc: "Disburse with one click" },
+      { title: "Analytics", desc: "Track revenue in real time" },
+    ],
+  },
 ];
 
 const navLinks = [
@@ -51,7 +99,7 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <div
               key={link.label}
-              className="relative"
+              className={link.hasDropdown ? "static" : "relative"}
               onMouseEnter={link.hasDropdown ? handleMouseEnter : undefined}
               onMouseLeave={link.hasDropdown ? handleMouseLeave : undefined}
             >
@@ -68,27 +116,102 @@ const Navbar = () => {
                 }`} />
               </Link>
 
-              {link.hasDropdown && showDropdown && (
-                <motion.div
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 8 }}
-                  className="absolute top-full left-0 mt-1 bg-background border border-border rounded-xl shadow-xl p-3 min-w-[320px] grid grid-cols-2 gap-1 z-50"
-                >
-                  {products.map((p) => (
-                    <Link
-                      key={p.label}
-                      to={p.href}
-                      className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-muted transition-colors"
-                    >
-                      <div className="w-8 h-8 rounded-lg bg-brand/10 flex items-center justify-center text-brand">
-                        <p.icon size={16} />
+              <AnimatePresence>
+                {link.hasDropdown && showDropdown && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
+                    className="absolute top-full left-0 right-0 mt-1 z-50"
+                  >
+                    <div className="max-w-7xl mx-auto section-padding">
+                      <div className="bg-background border border-border rounded-2xl shadow-2xl p-6 grid grid-cols-12 gap-6">
+                        {/* Featured card */}
+                        <div
+                          className="col-span-4 rounded-xl p-6 flex flex-col justify-between text-primary-foreground relative overflow-hidden"
+                          style={{
+                            background:
+                              "radial-gradient(circle at 80% 0%, #1F63ED 0%, #0a0f1f 60%)",
+                          }}
+                        >
+                          <div>
+                            <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#1F63ED] mb-3">
+                              ● What's New
+                            </p>
+                            <h3 className="font-display font-extrabold text-2xl leading-tight">
+                              Build with the{" "}
+                              <span className="text-[#5b9bff]">Pentagonware</span>{" "}
+                              ecosystem.
+                            </h3>
+                            <p className="mt-3 text-sm text-primary-foreground/70 leading-relaxed">
+                              Four products engineered to power your modern business — education, payments, operations, and creative AI.
+                            </p>
+                            <div className="mt-5 space-y-3">
+                              {[
+                                ["4", "Products in the ecosystem"],
+                                ["54+", "Projects completed"],
+                                ["95%", "Customer satisfaction"],
+                              ].map(([n, l]) => (
+                                <div key={l} className="flex items-center gap-3 text-sm">
+                                  <span className="font-display font-bold text-base w-10 text-primary-foreground">{n}</span>
+                                  <span className="text-primary-foreground/60">{l}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                          <Link to="/products" className="mt-6 inline-block">
+                            <Button
+                              size="sm"
+                              className="rounded-[3px] font-semibold gap-2 text-primary-foreground"
+                              style={{ backgroundColor: "#1F63ED" }}
+                            >
+                              See full platform <ArrowRight size={14} />
+                            </Button>
+                          </Link>
+                        </div>
+
+                        {/* Product columns */}
+                        <div className="col-span-8 grid grid-cols-2 gap-x-8 gap-y-7">
+                          {products.map((p) => (
+                            <div key={p.label}>
+                              <Link
+                                to={p.href}
+                                className="flex items-start gap-3 group"
+                              >
+                                <div className={`w-9 h-9 rounded-lg ${p.iconBg} ${p.iconColor} flex items-center justify-center shrink-0`}>
+                                  <p.icon size={18} />
+                                </div>
+                                <div>
+                                  <div className="text-sm font-bold text-foreground group-hover:text-brand transition-colors">
+                                    {p.label}
+                                  </div>
+                                  <div className="text-xs text-muted-foreground">{p.tagline}</div>
+                                </div>
+                              </Link>
+                              <ul className="mt-3 space-y-2 pl-12">
+                                {p.items.map((it) => (
+                                  <li key={it.title} className="flex gap-2">
+                                    <span className="text-muted-foreground/40 mt-1.5 text-[6px]">●</span>
+                                    <Link to={p.href} className="group">
+                                      <div className="text-[13px] font-semibold text-foreground group-hover:text-brand transition-colors leading-tight">
+                                        {it.title}
+                                      </div>
+                                      <div className="text-xs text-muted-foreground leading-tight">
+                                        {it.desc}
+                                      </div>
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                      <span className="text-sm font-medium text-foreground">{p.label}</span>
-                    </Link>
-                  ))}
-                </motion.div>
-              )}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           ))}
         </div>

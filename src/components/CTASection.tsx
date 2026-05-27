@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import ctaBg from "@/assets/cta-background.png";
 
 const CTASection = () => {
   return (
@@ -9,10 +10,14 @@ const CTASection = () => {
       <div className="max-w-7xl mx-auto section-padding">
         <div
           className="relative overflow-hidden py-20 md:py-24 px-8 md:px-16"
-          style={{ backgroundColor: "#1664F0", borderRadius: "24px" }}
+          style={{
+            backgroundColor: "#1664F0",
+            backgroundImage: `url(${ctaBg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            borderRadius: "24px",
+          }}
         >
-
-
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

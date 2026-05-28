@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CTASection from "@/components/CTASection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
@@ -9,6 +10,7 @@ import nerdclipImg from "@/assets/ecosystem/nerdclip.png";
 import invoicepentImg from "@/assets/ecosystem/invoicepent.png";
 import pentimageImg from "@/assets/ecosystem/pentimage.png";
 import pentapayImg from "@/assets/ecosystem/pentapay.png";
+
 
 const products = [
   {

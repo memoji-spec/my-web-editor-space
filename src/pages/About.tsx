@@ -21,12 +21,13 @@ const goals = [
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-[#06122e] text-white overflow-hidden">
+    <div className="min-h-screen bg-[#050b1f] text-white overflow-hidden">
       <AnnouncementBar />
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-20 md:pt-28 pb-24 md:pb-32">
+      <section className="relative pt-20 md:pt-28 pb-24 md:pb-32" style={{ background: "linear-gradient(180deg, #0a2b6e 0%, #050b1f 60%, #000000 100%)" }}>
+
         <div
           className="absolute inset-0 -z-10"
           style={{

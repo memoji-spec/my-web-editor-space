@@ -57,7 +57,7 @@ const Blog = () => {
 
       {/* Featured */}
       {featured && (
-        <section className="pb-12">
+        <section className="py-16" style={{ backgroundColor: "#0c1838" }}>
           <div className="max-w-7xl mx-auto section-padding">
             <Link to={`/blog/${featured.slug}`}>
               <motion.div

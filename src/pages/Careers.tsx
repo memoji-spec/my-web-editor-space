@@ -56,7 +56,7 @@ const Careers = () => {
       </section>
 
       {/* Stats */}
-      <section className="border-y border-white/10 bg-white/[0.02]">
+      <section className="border-y border-white/10" style={{ backgroundColor: "#0c1838" }}>
         <div className="max-w-7xl mx-auto section-padding py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
             { s: "2020", l: "Founding year" },

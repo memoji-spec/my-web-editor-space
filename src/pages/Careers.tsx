@@ -103,7 +103,7 @@ const Careers = () => {
       </section>
 
       {/* Open positions */}
-      <section id="open-positions" className="py-24 border-t border-white/10">
+      <section id="open-positions" className="py-24" style={{ backgroundColor: "#0a1632" }}>
         <div className="max-w-7xl mx-auto section-padding">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
             <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#93C5FD]">Open roles</p>

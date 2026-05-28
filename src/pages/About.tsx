@@ -149,20 +149,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24">
-        <div className="max-w-5xl mx-auto section-padding">
-          <div className="rounded-3xl p-12 md:p-20 text-center" style={{ background: "linear-gradient(135deg, #1F63ED 0%, #0B4DCC 100%)" }}>
-            <h2 className="font-display font-bold text-4xl md:text-5xl tracking-[-0.04em] text-white">Let's build something useful.</h2>
-            <p className="mt-4 text-white/85 max-w-xl mx-auto">Talk to our team about your operations, products, or roadmap.</p>
-            <Link to="/contact">
-              <Button size="lg" className="mt-8 bg-white text-[#0B4DCC] hover:bg-white/90 rounded-lg font-bold gap-2 shadow-none">
-                Get in touch <ArrowRight size={16} />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CTASection />
+
 
       <Footer />
     </div>

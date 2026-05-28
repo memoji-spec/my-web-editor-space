@@ -27,20 +27,14 @@ const openPositions = [
 
 const Careers = () => {
   return (
-    <div className="min-h-screen bg-[#06122e] text-white overflow-hidden">
+    <div className="min-h-screen bg-[#050b1f] text-white overflow-hidden">
       <AnnouncementBar />
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-20 md:pt-28 pb-24">
-        <div
-          className="absolute inset-0 -z-10"
-          style={{
-            background:
-              "radial-gradient(1100px 560px at 80% 10%, rgba(31,99,237,0.32), transparent 60%), radial-gradient(900px 500px at 10% 90%, rgba(11,77,204,0.3), transparent 60%), linear-gradient(180deg, #06122e 0%, #050b1f 100%)",
-          }}
-        />
+      <section className="relative pt-20 md:pt-28 pb-24" style={{ background: "linear-gradient(180deg, #0a2b6e 0%, #050b1f 60%, #000000 100%)" }}>
         <div className="max-w-7xl mx-auto section-padding grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-5 text-[#93C5FD]">Careers</p>
             <h1 className="font-display font-semibold text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight">

@@ -14,7 +14,7 @@ const products = [
   {
     name: "Nerdclip",
     tagline: "Platform for modern education",
-    headline: "Run your classrooms, courses, and learners — in one place.",
+    headline: "Run your classrooms, courses, and learners in one place.",
     body: "From scheduling to grading and collaboration, Nerdclip is the operating system for modern academic teams.",
     features: ["Smart scheduling", "Collaboration tools", "Progress tracking", "Parent & staff portals"],
     image: nerdclipImg,
@@ -22,7 +22,7 @@ const products = [
   },
   {
     name: "InvoicePent",
-    tagline: "Invoicing, receipts, inventory — all in one",
+    tagline: "Invoicing, receipts, inventory all in one",
     headline: "The back office your small business actually wants to open.",
     body: "Issue invoices, track payments, manage stock, and keep clean books without juggling five tools.",
     features: ["Invoicing & receipts", "Inventory tracking", "Tax-ready reports", "Multi-currency"],
@@ -32,7 +32,7 @@ const products = [
   {
     name: "PentPic",
     tagline: "Studio-grade images without prompts",
-    headline: "Generate hyper-real images of yourself — no prompt engineering required.",
+    headline: "Generate hyper-real images of yourself no prompt engineering required.",
     body: "Powered by our proprietary models. Upload a few photos and get studio-ready visuals in seconds.",
     features: ["Hyper-real generation", "Studio quality", "No prompts needed", "Batch export"],
     image: pentimageImg,
@@ -55,7 +55,7 @@ const Products = () => {
       <AnnouncementBar />
       <Navbar />
 
-      {/* Hero — Owner inspired, huge bold */}
+      {/* Hero Owner inspired, huge bold */}
       <section className="pt-20 md:pt-28 pb-12 md:pb-20">
         <div className="max-w-6xl mx-auto section-padding text-center">
           <motion.h1
@@ -73,7 +73,7 @@ const Products = () => {
             transition={{ delay: 0.15 }}
             className="mt-7 text-lg md:text-xl text-[#0a0f1f]/70 max-w-2xl mx-auto leading-relaxed"
           >
-            Education, payments, operations, and creative AI — built to work together, ready on day one.
+            Education, payments, operations, and creative AI built to work together, ready on day one.
           </motion.p>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="mt-9">
             <Link to="/contact">

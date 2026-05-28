@@ -10,7 +10,7 @@ import reliabilityImg from "@/assets/consulting/reliability.png";
 import whatWeDoImg from "@/assets/what-we-do-desktop.png";
 
 const services = [
-  { icon: Code2, title: "Custom SaaS Development", desc: "Bespoke platforms tailored to your operations — architected, built, and shipped end-to-end.", features: ["Full-stack delivery", "Cloud-native", "CI/CD pipelines", "Performance tuned"] },
+  { icon: Code2, title: "Custom SaaS Development", desc: "Bespoke platforms tailored to your operations architected, built, and shipped end-to-end.", features: ["Full-stack delivery", "Cloud-native", "CI/CD pipelines", "Performance tuned"] },
   { icon: Layers, title: "API Development & Integration", desc: "Robust APIs and integrations that quietly connect every tool you already depend on.", features: ["REST & GraphQL", "Third-party integrations", "Webhook systems", "Versioned docs"] },
   { icon: Zap, title: "AI & Machine Learning", desc: "Automate workflows, surface insights, and build experiences that learn with your business.", features: ["Custom models", "NLP & vision", "Predictive analytics", "RAG pipelines"] },
   { icon: Shield, title: "Enterprise Security", desc: "Compliance-grade controls embedded from the first commit, not bolted on later.", features: ["Pen testing", "Security audits", "Compliance frameworks", "Encryption"] },
@@ -24,7 +24,7 @@ const Services = () => {
       <AnnouncementBar />
       <Navbar />
 
-      {/* Hero — Brex inspired */}
+      {/* Hero Brex inspired */}
       <section className="relative pt-20 md:pt-28 pb-24 md:pb-36">
         <div
           className="absolute inset-0 -z-10"
@@ -41,7 +41,7 @@ const Services = () => {
               <span className="text-white/60">Built to ship.</span>
             </h1>
             <p className="mt-6 text-lg text-white/70 max-w-xl leading-relaxed">
-              From custom platforms to AI systems and enterprise security — we deliver software that ships fast and runs forever.
+              From custom platforms to AI systems and enterprise security we deliver software that ships fast and runs forever.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <Link to="/contact">
@@ -118,7 +118,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Feature split — Consulting */}
+      {/* Feature split Consulting */}
       <section className="py-24 md:py-32 border-t border-white/10">
         <div className="max-w-7xl mx-auto section-padding grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="rounded-2xl overflow-hidden ring-1 ring-white/10">
@@ -141,7 +141,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Feature split — Reliability */}
+      {/* Feature split Reliability */}
       <section className="py-24 md:py-32 border-t border-white/10">
         <div className="max-w-7xl mx-auto section-padding grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:order-2 rounded-2xl overflow-hidden ring-1 ring-white/10">
@@ -153,7 +153,7 @@ const Services = () => {
               Built to perform. Wired to last.
             </h2>
             <p className="text-white/70 leading-relaxed mb-6">
-              Observability, automated recovery, and capacity built in from day one — so your team sleeps at night.
+              Observability, automated recovery, and capacity built in from day one so your team sleeps at night.
             </p>
             <Link to="/contact">
               <Button className="bg-[#1F63ED] hover:bg-[#1F63ED]/90 text-white rounded-lg font-bold gap-2 shadow-none">

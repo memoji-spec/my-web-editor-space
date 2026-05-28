@@ -40,7 +40,7 @@ const About = () => {
               <span className="text-white/60">Built to last.</span>
             </h1>
             <p className="mt-6 text-lg text-white/70 max-w-xl leading-relaxed">
-              We design and ship connected digital systems — from business operations to academic platforms and creative AI — for teams that have outgrown disconnected tools.
+              We design and ship connected digital systems from business operations to academic platforms and creative AI for teams that have outgrown disconnected tools.
             </p>
             <div className="mt-8 flex gap-3">
               <Link to="/contact">
@@ -85,7 +85,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
               { icon: Target, label: "Mission", title: "Simplify complex processes", desc: "Replace fragmented tools and manual systems with unified platforms that bring clarity, control, and efficiency." },
-              { icon: Eye, label: "Vision", title: "A trusted provider", desc: "A future where teams rely on connected systems — not scattered tools — to operate with confidence." },
+              { icon: Eye, label: "Vision", title: "A trusted provider", desc: "A future where teams rely on connected systems not scattered tools to operate with confidence." },
               { icon: Compass, label: "Goals", title: "Building for impact", desc: "Reliable systems that solve real operational problems while staying simple to use." },
             ].map((item, i) => (
               <motion.div
@@ -120,7 +120,7 @@ const About = () => {
               Connected systems, not scattered tools.
             </h2>
             <p className="text-white/70 leading-relaxed mb-4">
-              We design systems that simplify complex processes — from operations and finance to academic platforms and intelligent tools — with a focus on structure, usability, and real-world application.
+              We design systems that simplify complex processes from operations and finance to academic platforms and intelligent tools with a focus on structure, usability, and real-world application.
             </p>
             <p className="text-white/70 leading-relaxed">
               Rather than offering isolated tools, we build connected systems that help teams operate efficiently and adapt to evolving digital needs.

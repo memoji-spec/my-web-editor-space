@@ -11,7 +11,7 @@ const HeroSection = () => {
       className="relative min-h-[88vh] md:min-h-screen flex items-center justify-center overflow-hidden"
       style={{ backgroundColor: "#EAF0FA" }}
     >
-      {/* Eager background image — loads with the page, no flash */}
+      {/* Eager background image loads with the page, no flash */}
       <img
         src={heroBg}
         alt=""

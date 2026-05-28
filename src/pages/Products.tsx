@@ -89,7 +89,7 @@ const Products = () => {
 
       {/* Product stack */}
       <section className="pb-24 md:pb-32">
-        <div className="max-w-6xl mx-auto section-padding space-y-8 md:space-y-10">
+        <div className="max-w-7xl mx-auto section-padding space-y-8 md:space-y-10">
           {products.map((p, i) => (
             <motion.div
               key={p.name}
@@ -100,14 +100,14 @@ const Products = () => {
               className="rounded-[28px] overflow-hidden ring-1 ring-black/5 shadow-[0_30px_80px_-40px_rgba(6,33,97,0.35)]"
               style={{ backgroundColor: p.accent }}
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-0 min-h-[360px]">
                 <div className="p-10 md:p-14 lg:p-16 flex flex-col justify-center text-white">
                   <p className="text-xs font-light tracking-wide text-[#93C5FD] mb-4">{p.name}</p>
-                  <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em] max-w-md">
+                  <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em] max-w-xl">
                     {p.headline}
                   </h2>
-                  <p className="mt-5 text-white/70 leading-relaxed max-w-md">{p.body}</p>
-                  <ul className="mt-7 grid grid-cols-2 gap-y-2 gap-x-4 max-w-md">
+                  <p className="mt-5 text-white/70 leading-relaxed max-w-xl">{p.body}</p>
+                  <ul className="mt-7 grid grid-cols-2 gap-y-2 gap-x-4 max-w-xl">
                     {p.features.map((f) => (
                       <li key={f} className="flex items-center gap-2 text-sm text-white/85">
                         <CheckCircle2 size={14} className="text-[#93C5FD] shrink-0" /> {f}
@@ -139,20 +139,8 @@ const Products = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="pb-24">
-        <div className="max-w-5xl mx-auto section-padding">
-          <div className="rounded-3xl p-12 md:p-20 text-center" style={{ background: "linear-gradient(135deg, #1F63ED 0%, #0B4DCC 100%)" }}>
-            <h2 className="font-display font-bold text-4xl md:text-5xl tracking-[-0.04em] text-white">See it in action.</h2>
-            <p className="mt-4 text-white/85 max-w-xl mx-auto">Book a 20-minute walkthrough of the ecosystem with our team.</p>
-            <Link to="/contact">
-              <Button size="lg" className="mt-8 bg-white text-[#0B4DCC] hover:bg-white/90 rounded-lg font-bold gap-2 shadow-none">
-                Get started <ArrowRight size={16} />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CTASection />
+
 
       <Footer />
     </div>

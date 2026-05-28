@@ -2,10 +2,12 @@ import { motion } from "framer-motion";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CTASection from "@/components/CTASection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { MapPin, Clock, ArrowRight, Users, Lightbulb, Heart, Rocket } from "lucide-react";
 import collageImg from "@/assets/collage/p2.png";
+
 
 const values = [
   { icon: Users, title: "Exceptional people", desc: "Our strength comes from the team we've built and continue to grow." },
@@ -25,20 +27,14 @@ const openPositions = [
 
 const Careers = () => {
   return (
-    <div className="min-h-screen bg-[#06122e] text-white overflow-hidden">
+    <div className="min-h-screen bg-[#050b1f] text-white overflow-hidden">
       <AnnouncementBar />
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-20 md:pt-28 pb-24">
-        <div
-          className="absolute inset-0 -z-10"
-          style={{
-            background:
-              "radial-gradient(1100px 560px at 80% 10%, rgba(31,99,237,0.32), transparent 60%), radial-gradient(900px 500px at 10% 90%, rgba(11,77,204,0.3), transparent 60%), linear-gradient(180deg, #06122e 0%, #050b1f 100%)",
-          }}
-        />
+      <section className="relative pt-20 md:pt-28 pb-24" style={{ background: "linear-gradient(180deg, #0a2b6e 0%, #050b1f 60%, #000000 100%)" }}>
         <div className="max-w-7xl mx-auto section-padding grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-5 text-[#93C5FD]">Careers</p>
             <h1 className="font-display font-semibold text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight">
@@ -60,7 +56,7 @@ const Careers = () => {
       </section>
 
       {/* Stats */}
-      <section className="border-y border-white/10 bg-white/[0.02]">
+      <section className="border-y border-white/10" style={{ backgroundColor: "#0c1838" }}>
         <div className="max-w-7xl mx-auto section-padding py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
             { s: "2020", l: "Founding year" },
@@ -77,7 +73,7 @@ const Careers = () => {
       </section>
 
       {/* Values */}
-      <section className="py-24 md:py-32">
+      <section className="py-24 md:py-32" style={{ backgroundColor: "#11214a" }}>
         <div className="max-w-7xl mx-auto section-padding">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mb-16">
             <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#93C5FD]">How we work</p>
@@ -107,7 +103,7 @@ const Careers = () => {
       </section>
 
       {/* Open positions */}
-      <section id="open-positions" className="py-24 border-t border-white/10">
+      <section id="open-positions" className="py-24" style={{ backgroundColor: "#0a1632" }}>
         <div className="max-w-7xl mx-auto section-padding">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
             <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#93C5FD]">Open roles</p>
@@ -142,20 +138,8 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24">
-        <div className="max-w-5xl mx-auto section-padding">
-          <div className="rounded-3xl p-12 md:p-20 text-center" style={{ background: "linear-gradient(135deg, #1F63ED 0%, #0B4DCC 100%)" }}>
-            <h2 className="font-display font-bold text-4xl md:text-5xl tracking-[-0.04em] text-white">Don't see your role?</h2>
-            <p className="mt-4 text-white/85 max-w-xl mx-auto">We're always interested in talking to exceptional builders.</p>
-            <Link to="/contact">
-              <Button size="lg" className="mt-8 bg-white text-[#0B4DCC] hover:bg-white/90 rounded-lg font-bold gap-2 shadow-none">
-                Say hello <ArrowRight size={16} />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CTASection />
+
 
       <Footer />
     </div>

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CTASection from "@/components/CTASection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
@@ -10,11 +11,12 @@ import invoicepentImg from "@/assets/ecosystem/invoicepent.png";
 import pentimageImg from "@/assets/ecosystem/pentimage.png";
 import pentapayImg from "@/assets/ecosystem/pentapay.png";
 
+
 const products = [
   {
     name: "Nerdclip",
     tagline: "Platform for modern education",
-    headline: "Run your classrooms, courses, and learners — in one place.",
+    headline: "Run your classrooms, courses, and learners in one place.",
     body: "From scheduling to grading and collaboration, Nerdclip is the operating system for modern academic teams.",
     features: ["Smart scheduling", "Collaboration tools", "Progress tracking", "Parent & staff portals"],
     image: nerdclipImg,
@@ -22,7 +24,7 @@ const products = [
   },
   {
     name: "InvoicePent",
-    tagline: "Invoicing, receipts, inventory — all in one",
+    tagline: "Invoicing, receipts, inventory all in one",
     headline: "The back office your small business actually wants to open.",
     body: "Issue invoices, track payments, manage stock, and keep clean books without juggling five tools.",
     features: ["Invoicing & receipts", "Inventory tracking", "Tax-ready reports", "Multi-currency"],
@@ -32,7 +34,7 @@ const products = [
   {
     name: "PentPic",
     tagline: "Studio-grade images without prompts",
-    headline: "Generate hyper-real images of yourself — no prompt engineering required.",
+    headline: "Generate hyper-real images of yourself no prompt engineering required.",
     body: "Powered by our proprietary models. Upload a few photos and get studio-ready visuals in seconds.",
     features: ["Hyper-real generation", "Studio quality", "No prompts needed", "Batch export"],
     image: pentimageImg,
@@ -55,7 +57,7 @@ const Products = () => {
       <AnnouncementBar />
       <Navbar />
 
-      {/* Hero — Owner inspired, huge bold */}
+      {/* Hero Owner inspired, huge bold */}
       <section className="pt-20 md:pt-28 pb-12 md:pb-20">
         <div className="max-w-6xl mx-auto section-padding text-center">
           <motion.h1
@@ -73,7 +75,7 @@ const Products = () => {
             transition={{ delay: 0.15 }}
             className="mt-7 text-lg md:text-xl text-[#0a0f1f]/70 max-w-2xl mx-auto leading-relaxed"
           >
-            Education, payments, operations, and creative AI — built to work together, ready on day one.
+            Education, payments, operations, and creative AI built to work together, ready on day one.
           </motion.p>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="mt-9">
             <Link to="/contact">
@@ -87,7 +89,7 @@ const Products = () => {
 
       {/* Product stack */}
       <section className="pb-24 md:pb-32">
-        <div className="max-w-6xl mx-auto section-padding space-y-8 md:space-y-10">
+        <div className="max-w-7xl mx-auto section-padding space-y-8 md:space-y-10">
           {products.map((p, i) => (
             <motion.div
               key={p.name}
@@ -98,14 +100,14 @@ const Products = () => {
               className="rounded-[28px] overflow-hidden ring-1 ring-black/5 shadow-[0_30px_80px_-40px_rgba(6,33,97,0.35)]"
               style={{ backgroundColor: p.accent }}
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-0 min-h-[360px]">
                 <div className="p-10 md:p-14 lg:p-16 flex flex-col justify-center text-white">
                   <p className="text-xs font-light tracking-wide text-[#93C5FD] mb-4">{p.name}</p>
-                  <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em] max-w-md">
+                  <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-[-0.02em] max-w-xl">
                     {p.headline}
                   </h2>
-                  <p className="mt-5 text-white/70 leading-relaxed max-w-md">{p.body}</p>
-                  <ul className="mt-7 grid grid-cols-2 gap-y-2 gap-x-4 max-w-md">
+                  <p className="mt-5 text-white/70 leading-relaxed max-w-xl">{p.body}</p>
+                  <ul className="mt-7 grid grid-cols-2 gap-y-2 gap-x-4 max-w-xl">
                     {p.features.map((f) => (
                       <li key={f} className="flex items-center gap-2 text-sm text-white/85">
                         <CheckCircle2 size={14} className="text-[#93C5FD] shrink-0" /> {f}
@@ -137,20 +139,8 @@ const Products = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="pb-24">
-        <div className="max-w-5xl mx-auto section-padding">
-          <div className="rounded-3xl p-12 md:p-20 text-center" style={{ background: "linear-gradient(135deg, #1F63ED 0%, #0B4DCC 100%)" }}>
-            <h2 className="font-display font-bold text-4xl md:text-5xl tracking-[-0.04em] text-white">See it in action.</h2>
-            <p className="mt-4 text-white/85 max-w-xl mx-auto">Book a 20-minute walkthrough of the ecosystem with our team.</p>
-            <Link to="/contact">
-              <Button size="lg" className="mt-8 bg-white text-[#0B4DCC] hover:bg-white/90 rounded-lg font-bold gap-2 shadow-none">
-                Get started <ArrowRight size={16} />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CTASection />
+
 
       <Footer />
     </div>

@@ -2,15 +2,17 @@ import { motion } from "framer-motion";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CTASection from "@/components/CTASection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Code2, Layers, Zap, Shield, Database, Globe, CheckCircle2 } from "lucide-react";
 import integratedImg from "@/assets/consulting/integrated.png";
 import reliabilityImg from "@/assets/consulting/reliability.png";
-import whatWeDoImg from "@/assets/what-we-do-desktop.png";
+import servicesHero from "@/assets/services-hero.png";
+
 
 const services = [
-  { icon: Code2, title: "Custom SaaS Development", desc: "Bespoke platforms tailored to your operations — architected, built, and shipped end-to-end.", features: ["Full-stack delivery", "Cloud-native", "CI/CD pipelines", "Performance tuned"] },
+  { icon: Code2, title: "Custom SaaS Development", desc: "Bespoke platforms tailored to your operations architected, built, and shipped end-to-end.", features: ["Full-stack delivery", "Cloud-native", "CI/CD pipelines", "Performance tuned"] },
   { icon: Layers, title: "API Development & Integration", desc: "Robust APIs and integrations that quietly connect every tool you already depend on.", features: ["REST & GraphQL", "Third-party integrations", "Webhook systems", "Versioned docs"] },
   { icon: Zap, title: "AI & Machine Learning", desc: "Automate workflows, surface insights, and build experiences that learn with your business.", features: ["Custom models", "NLP & vision", "Predictive analytics", "RAG pipelines"] },
   { icon: Shield, title: "Enterprise Security", desc: "Compliance-grade controls embedded from the first commit, not bolted on later.", features: ["Pen testing", "Security audits", "Compliance frameworks", "Encryption"] },
@@ -20,19 +22,15 @@ const services = [
 
 const Services = () => {
   return (
-    <div className="min-h-screen bg-[#06122e] text-white overflow-hidden">
+    <div className="min-h-screen bg-[#050b1f] text-white overflow-hidden">
       <AnnouncementBar />
       <Navbar />
 
-      {/* Hero — Brex inspired */}
-      <section className="relative pt-20 md:pt-28 pb-24 md:pb-36">
-        <div
-          className="absolute inset-0 -z-10"
-          style={{
-            background:
-              "radial-gradient(1200px 600px at 80% 20%, rgba(31,99,237,0.35), transparent 60%), radial-gradient(900px 500px at 10% 80%, rgba(11,77,204,0.35), transparent 60%), linear-gradient(180deg, #06122e 0%, #050b1f 100%)",
-          }}
-        />
+      {/* Hero deep blue to black gradient */}
+      <section
+        className="relative pt-20 md:pt-28 pb-24 md:pb-36"
+        style={{ background: "linear-gradient(180deg, #0a2b6e 0%, #050b1f 60%, #000000 100%)" }}
+      >
         <div className="max-w-7xl mx-auto section-padding grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-5 text-[#93C5FD]">Our Services</p>
@@ -41,7 +39,7 @@ const Services = () => {
               <span className="text-white/60">Built to ship.</span>
             </h1>
             <p className="mt-6 text-lg text-white/70 max-w-xl leading-relaxed">
-              From custom platforms to AI systems and enterprise security — we deliver software that ships fast and runs forever.
+              From custom platforms to AI systems and enterprise security we deliver software that ships fast and runs forever.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <Link to="/contact">
@@ -57,15 +55,15 @@ const Services = () => {
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.9 }} className="relative">
-            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl">
-              <img src={whatWeDoImg} alt="Pentagonware engineering workspace" className="w-full h-full object-cover" />
+            <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl aspect-square">
+              <img src={servicesHero} alt="Pentagonware customer" className="w-full h-full object-cover" />
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Stats strip */}
-      <section className="border-y border-white/10 bg-white/[0.02]">
+      <section className="border-y border-white/10" style={{ backgroundColor: "#0c1838" }}>
         <div className="max-w-7xl mx-auto section-padding py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
             { s: "54+", l: "Projects shipped" },
@@ -82,7 +80,7 @@ const Services = () => {
       </section>
 
       {/* Services grid */}
-      <section className="py-24 md:py-32">
+      <section className="py-24 md:py-32" style={{ backgroundColor: "#11214a" }}>
         <div className="max-w-7xl mx-auto section-padding">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mb-16">
             <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#93C5FD]">What we deliver</p>
@@ -118,8 +116,8 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Feature split — Consulting */}
-      <section className="py-24 md:py-32 border-t border-white/10">
+      {/* Feature split Consulting */}
+      <section className="py-24 md:py-32" style={{ backgroundColor: "#0a1632" }}>
         <div className="max-w-7xl mx-auto section-padding grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="rounded-2xl overflow-hidden ring-1 ring-white/10">
             <img src={integratedImg} alt="Integrated consulting" className="w-full h-full object-cover" />
@@ -141,8 +139,8 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Feature split — Reliability */}
-      <section className="py-24 md:py-32 border-t border-white/10">
+      {/* Feature split Reliability */}
+      <section className="py-24 md:py-32" style={{ backgroundColor: "#16284f" }}>
         <div className="max-w-7xl mx-auto section-padding grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:order-2 rounded-2xl overflow-hidden ring-1 ring-white/10">
             <img src={reliabilityImg} alt="Reliability and performance" className="w-full h-full object-cover" />
@@ -153,7 +151,7 @@ const Services = () => {
               Built to perform. Wired to last.
             </h2>
             <p className="text-white/70 leading-relaxed mb-6">
-              Observability, automated recovery, and capacity built in from day one — so your team sleeps at night.
+              Observability, automated recovery, and capacity built in from day one so your team sleeps at night.
             </p>
             <Link to="/contact">
               <Button className="bg-[#1F63ED] hover:bg-[#1F63ED]/90 text-white rounded-lg font-bold gap-2 shadow-none">
@@ -164,20 +162,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24">
-        <div className="max-w-5xl mx-auto section-padding">
-          <div className="rounded-3xl p-12 md:p-20 text-center ring-1 ring-white/10" style={{ background: "linear-gradient(135deg, #1F63ED 0%, #0B4DCC 100%)" }}>
-            <h2 className="font-display font-bold text-4xl md:text-5xl tracking-[-0.04em] text-white">Build what's next with us.</h2>
-            <p className="mt-4 text-white/80 max-w-xl mx-auto">Tell us what you're building. We'll bring the engineers.</p>
-            <Link to="/contact">
-              <Button size="lg" className="mt-8 bg-white text-[#0B4DCC] hover:bg-white/90 rounded-lg font-bold gap-2 shadow-none">
-                Get started <ArrowRight size={16} />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CTASection />
 
       <Footer />
     </div>
@@ -185,3 +170,4 @@ const Services = () => {
 };
 
 export default Services;
+

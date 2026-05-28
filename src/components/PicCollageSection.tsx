@@ -9,7 +9,7 @@ const PicCollageSection = () => {
     <section className="py-20 md:py-24 bg-background">
       <div className="max-w-7xl mx-auto section-padding">
         <div className="grid grid-cols-2 md:grid-cols-3 grid-rows-[200px_200px_200px] md:grid-rows-2 gap-4 md:gap-5 md:h-[560px]">
-          {/* LEFT: Experienced field Experts — tall, spans 2 rows */}
+          {/* LEFT: Experienced field Experts tall, spans 2 rows */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ const PicCollageSection = () => {
             </div>
           </motion.div>
 
-          {/* RIGHT (desktop) / second-row right (mobile): 95% — tall on desktop only */}
+          {/* RIGHT (desktop) / second-row right (mobile): 95% tall on desktop only */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ const PicCollageSection = () => {
             </div>
           </motion.div>
 
-          {/* MIDDLE BOTTOM: Portrait — full-width on mobile, middle bottom on desktop */}
+          {/* MIDDLE BOTTOM: Portrait full-width on mobile, middle bottom on desktop */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

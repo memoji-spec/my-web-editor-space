@@ -2,10 +2,12 @@ import { motion } from "framer-motion";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CTASection from "@/components/CTASection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { MapPin, Clock, ArrowRight, Users, Lightbulb, Heart, Rocket } from "lucide-react";
 import collageImg from "@/assets/collage/p2.png";
+
 
 const values = [
   { icon: Users, title: "Exceptional people", desc: "Our strength comes from the team we've built and continue to grow." },

@@ -2,12 +2,14 @@ import { motion } from "framer-motion";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CTASection from "@/components/CTASection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Code2, Layers, Zap, Shield, Database, Globe, CheckCircle2 } from "lucide-react";
 import integratedImg from "@/assets/consulting/integrated.png";
 import reliabilityImg from "@/assets/consulting/reliability.png";
-import whatWeDoImg from "@/assets/what-we-do-desktop.png";
+import servicesHero from "@/assets/services-hero.png";
+
 
 const services = [
   { icon: Code2, title: "Custom SaaS Development", desc: "Bespoke platforms tailored to your operations architected, built, and shipped end-to-end.", features: ["Full-stack delivery", "Cloud-native", "CI/CD pipelines", "Performance tuned"] },

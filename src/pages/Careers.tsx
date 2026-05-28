@@ -73,7 +73,7 @@ const Careers = () => {
       </section>
 
       {/* Values */}
-      <section className="py-24 md:py-32">
+      <section className="py-24 md:py-32" style={{ backgroundColor: "#11214a" }}>
         <div className="max-w-7xl mx-auto section-padding">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mb-16">
             <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#93C5FD]">How we work</p>

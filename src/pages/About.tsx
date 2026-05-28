@@ -106,7 +106,8 @@ const About = () => {
       </section>
 
       {/* Story split */}
-      <section className="py-24 border-t border-white/10">
+      <section className="py-24" style={{ backgroundColor: "#0a1632" }}>
+
         <div className="max-w-7xl mx-auto section-padding grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="rounded-2xl overflow-hidden ring-1 ring-white/10">
             <img src={integratedImg} alt="Our story" className="w-full h-full object-cover" />

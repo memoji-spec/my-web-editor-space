@@ -2,12 +2,14 @@ import { motion } from "framer-motion";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CTASection from "@/components/CTASection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Target, Eye, Compass, CheckCircle2 } from "lucide-react";
 import collageImg from "@/assets/collage/p2.png";
 import integratedImg from "@/assets/consulting/integrated.png";
 import reliabilityImg from "@/assets/consulting/reliability.png";
+
 
 const goals = [
   "Build reliable systems that solve real operational challenges",

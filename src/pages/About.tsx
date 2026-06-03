@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Target, Eye, Compass, CheckCircle2 } from "lucide-react";
 import collageImg from "@/assets/collage/p2.png";
-import integratedImg from "@/assets/consulting/integrated.png";
-import reliabilityImg from "@/assets/consulting/reliability.png";
+import workingTowardsAsset from "@/assets/working-towards.png.asset.json";
 
+const workingTowardsImg = workingTowardsAsset.url;
 
 const goals = [
   "Build reliable systems that solve real operational challenges",
@@ -21,14 +21,12 @@ const goals = [
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-[#050b1f] text-white overflow-hidden">
+    <div className="min-h-screen bg-white text-[#0a0f1f] overflow-hidden">
       <AnnouncementBar />
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-20 md:pt-28 pb-24 md:pb-32" style={{ background: "linear-gradient(180deg, #0a2b6e 0%, #050b1f 60%, #000000 100%)" }}>
-
-
+      <section className="relative pt-20 md:pt-28 pb-24 md:pb-32 text-white" style={{ background: "linear-gradient(180deg, #0a2b6e 0%, #050b1f 60%, #000000 100%)" }}>
         <div className="max-w-7xl mx-auto section-padding grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-5 text-[#93C5FD]">About Pentagonware</p>
@@ -54,7 +52,7 @@ const About = () => {
       </section>
 
       {/* Stats */}
-      <section className="border-y border-white/10" style={{ backgroundColor: "#0c1838" }}>
+      <section className="border-y border-black/5 bg-[#f8f7f4]">
         <div className="max-w-7xl mx-auto section-padding py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
             { s: "54+", l: "Projects shipped" },
@@ -63,19 +61,19 @@ const About = () => {
             { s: "95%", l: "Customer satisfaction" },
           ].map((x) => (
             <div key={x.l}>
-              <p className="font-display font-semibold text-3xl md:text-4xl text-white">{x.s}</p>
-              <p className="text-sm text-white/60 mt-1">{x.l}</p>
+              <p className="font-display font-semibold text-3xl md:text-4xl text-[#0a0f1f]">{x.s}</p>
+              <p className="text-sm text-[#0a0f1f]/60 mt-1">{x.l}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Mission / Vision / Goals */}
-      <section className="py-24 md:py-32" style={{ backgroundColor: "#11214a" }}>
+      <section className="py-24 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto section-padding">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mb-16">
-            <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#93C5FD]">What drives us</p>
-            <h2 className="font-display font-semibold text-4xl md:text-5xl tracking-tight">
+            <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#1F63ED]">What drives us</p>
+            <h2 className="font-display font-semibold text-4xl md:text-5xl tracking-tight text-[#0a0f1f]">
               A clear mission. A focused vision.
             </h2>
           </motion.div>
@@ -91,57 +89,53 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="rounded-2xl p-8 ring-1 ring-white/10 bg-gradient-to-b from-white/[0.04] to-white/[0.01]"
+                className="rounded-2xl p-8 ring-1 ring-black/5 bg-white shadow-[0_10px_40px_-20px_rgba(6,33,97,0.15)]"
               >
-                <div className="w-11 h-11 rounded-lg bg-[#1F63ED]/15 ring-1 ring-[#1F63ED]/30 flex items-center justify-center text-[#93C5FD] mb-6">
+                <div className="w-11 h-11 rounded-lg bg-[#1F63ED]/10 ring-1 ring-[#1F63ED]/20 flex items-center justify-center text-[#1F63ED] mb-6">
                   <item.icon size={20} />
                 </div>
-                <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#93C5FD] mb-2">{item.label}</p>
-                <h3 className="font-display font-semibold text-xl mb-3">{item.title}</h3>
-                <p className="text-sm text-white/65 leading-relaxed">{item.desc}</p>
+                <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#1F63ED] mb-2">{item.label}</p>
+                <h3 className="font-display font-semibold text-xl mb-3 text-[#0a0f1f]">{item.title}</h3>
+                <p className="text-sm text-[#0a0f1f]/65 leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Story split */}
-      <section className="py-24" style={{ backgroundColor: "#0a1632" }}>
-
-        <div className="max-w-7xl mx-auto section-padding grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="rounded-2xl overflow-hidden ring-1 ring-white/10">
-            <img src={integratedImg} alt="Our story" className="w-full h-full object-cover" />
-          </motion.div>
-          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#93C5FD]">Our story</p>
-            <h2 className="font-display font-semibold text-4xl md:text-5xl tracking-tight mb-5">
-              Connected systems, not scattered tools.
+      {/* Our Story centered text only */}
+      <section className="py-24 md:py-32 bg-[#f8f7f4]">
+        <div className="max-w-3xl mx-auto section-padding text-center">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#1F63ED]">Our story</p>
+            <h2 className="font-display font-semibold text-4xl md:text-5xl tracking-tight mb-8 text-[#0a0f1f]">
+              Solutions for almost every industry.
             </h2>
-            <p className="text-white/70 leading-relaxed mb-4">
-              We design systems that simplify complex processes from operations and finance to academic platforms and intelligent tools with a focus on structure, usability, and real-world application.
+            <p className="text-[#0a0f1f]/75 leading-relaxed mb-5">
+              Founded in 2018, Pentagonware Technologies aims to offer IT solutions to businesses in almost every industry. Through our innovative solutions, we can help solve your business issues. Whether you need a website, software, a tool, a portal, IT consultations, digital marketing services, cloud-based solutions, blockchain solutions, or more, we offer everything.
             </p>
-            <p className="text-white/70 leading-relaxed">
-              Rather than offering isolated tools, we build connected systems that help teams operate efficiently and adapt to evolving digital needs.
+            <p className="text-[#0a0f1f]/75 leading-relaxed">
+              Our team of experts can provide tailored IT solutions to businesses in industries such as aerospace, agriculture, marketing, education, banking, finance, law firms, auto dealers, religious institutes, restaurants, hotels, real estate, health, media industry, and entertainment, thus, everyone out there. We have a wealth of experience and knowledge in each of these industries and can provide bespoke IT solutions that will help your business to succeed.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Goals list */}
-      <section className="py-24" style={{ backgroundColor: "#16284f" }}>
+      {/* What we're working towards */}
+      <section className="py-24 md:py-32 bg-[#eef0f3]">
         <div className="max-w-7xl mx-auto section-padding grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:order-2 rounded-2xl overflow-hidden ring-1 ring-white/10">
-            <img src={reliabilityImg} alt="What we're building" className="w-full h-full object-cover" />
+          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:order-2 rounded-2xl overflow-hidden ring-1 ring-black/5 shadow-[0_10px_40px_-20px_rgba(6,33,97,0.15)]">
+            <img src={workingTowardsImg} alt="What we're working towards" className="w-full h-full object-cover" />
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:order-1">
-            <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#93C5FD]">What we're working towards</p>
-            <h2 className="font-display font-semibold text-4xl md:text-5xl tracking-tight mb-6">
+            <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#1F63ED]">What we're working towards</p>
+            <h2 className="font-display font-semibold text-4xl md:text-5xl tracking-tight mb-6 text-[#0a0f1f]">
               Goals that guide every release.
             </h2>
             <ul className="space-y-3">
               {goals.map((g) => (
-                <li key={g} className="flex items-start gap-3 text-white/80">
-                  <CheckCircle2 size={18} className="text-[#93C5FD] mt-0.5 shrink-0" /> <span>{g}</span>
+                <li key={g} className="flex items-start gap-3 text-[#0a0f1f]/80">
+                  <CheckCircle2 size={18} className="text-[#1F63ED] mt-0.5 shrink-0" /> <span>{g}</span>
                 </li>
               ))}
             </ul>
@@ -150,8 +144,6 @@ const About = () => {
       </section>
 
       <CTASection />
-
-
       <Footer />
     </div>
   );

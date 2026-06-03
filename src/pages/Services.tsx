@@ -29,7 +29,7 @@ const Services = () => {
 
       {/* Hero deep blue to black gradient */}
       <section
-        className="relative pt-20 md:pt-28 pb-24 md:pb-36"
+        className="relative pt-20 md:pt-28 pb-24 md:pb-36 text-white"
         style={{ background: "linear-gradient(180deg, #0a2b6e 0%, #050b1f 60%, #000000 100%)" }}
       >
         <div className="max-w-7xl mx-auto section-padding grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

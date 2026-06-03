@@ -8,7 +8,8 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Code2, Layers, Zap, Shield, Database, Globe, CheckCircle2 } from "lucide-react";
 import integratedImg from "@/assets/consulting/integrated.png";
 import reliabilityImg from "@/assets/consulting/reliability.png";
-import servicesHero from "@/assets/services-hero.png";
+import servicesHeroAsset from "@/assets/services-image.png.asset.json";
+const servicesHero = servicesHeroAsset.url;
 
 
 const services = [
@@ -22,7 +23,7 @@ const services = [
 
 const Services = () => {
   return (
-    <div className="min-h-screen bg-[#050b1f] text-white overflow-hidden">
+    <div className="min-h-screen bg-white text-[#0a0f1f] overflow-hidden">
       <AnnouncementBar />
       <Navbar />
 

@@ -6,7 +6,8 @@ import CTASection from "@/components/CTASection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { MapPin, Clock, ArrowRight, Users, Lightbulb, Heart, Rocket } from "lucide-react";
-import collageImg from "@/assets/collage/p2.png";
+import careersHeroAsset from "@/assets/careers.png.asset.json";
+const collageImg = careersHeroAsset.url;
 
 
 const values = [
@@ -27,12 +28,12 @@ const openPositions = [
 
 const Careers = () => {
   return (
-    <div className="min-h-screen bg-[#050b1f] text-white overflow-hidden">
+    <div className="min-h-screen bg-white text-[#0a0f1f] overflow-hidden">
       <AnnouncementBar />
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-20 md:pt-28 pb-24" style={{ background: "linear-gradient(180deg, #0a2b6e 0%, #050b1f 60%, #000000 100%)" }}>
+      <section className="relative pt-20 md:pt-28 pb-24 text-white" style={{ background: "linear-gradient(180deg, #0a2b6e 0%, #050b1f 60%, #000000 100%)" }}>
         <div className="max-w-7xl mx-auto section-padding grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>

@@ -11,9 +11,8 @@ const blogPosts = [
     category: "AI & Innovation",
     title: "The Future of Generative AI in Enterprise",
     excerpt: "How generative AI is reshaping enterprise workflows and unlocking new opportunities for digital transformation.",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=700&fit=crop",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&h=600&fit=crop",
     date: "March 28, 2026",
-    featured: true,
   },
   {
     slug: "scaling-infrastructure",
@@ -23,21 +22,33 @@ const blogPosts = [
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&h=600&fit=crop",
     date: "March 20, 2026",
   },
+  {
+    slug: "design-systems-that-scale",
+    category: "Design",
+    title: "Design Systems That Scale With Your Team",
+    excerpt: "How a thoughtful design system keeps product velocity high as your team and surface area grow.",
+    image: "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=900&h=600&fit=crop",
+    date: "March 12, 2026",
+  },
+  {
+    slug: "payments-in-emerging-markets",
+    category: "Fintech",
+    title: "Building Payments for Emerging Markets",
+    excerpt: "Lessons from shipping a payment gateway built for African businesses with global ambitions.",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&h=600&fit=crop",
+    date: "March 4, 2026",
+  },
 ];
 
 const Blog = () => {
-  const featured = blogPosts.find((p) => p.featured);
-  const rest = blogPosts.filter((p) => !p.featured);
-
   return (
-    <div className="min-h-screen bg-[#050b1f] text-white overflow-hidden">
+    <div className="min-h-screen bg-white text-[#0a0f1f] overflow-hidden">
       <AnnouncementBar />
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-20 md:pt-28 pb-16 md:pb-24" style={{ background: "linear-gradient(180deg, #0a2b6e 0%, #050b1f 60%, #000000 100%)" }}>
+      <section className="relative pt-20 md:pt-28 pb-16 md:pb-24 text-white" style={{ background: "linear-gradient(180deg, #0a2b6e 0%, #050b1f 60%, #000000 100%)" }}>
         <div className="max-w-7xl mx-auto section-padding">
-
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-xs font-semibold tracking-[0.25em] uppercase mb-5 text-[#93C5FD]">
             Insights
           </motion.p>
@@ -55,58 +66,30 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Featured */}
-      {featured && (
-        <section className="py-16" style={{ backgroundColor: "#0c1838" }}>
-          <div className="max-w-7xl mx-auto section-padding">
-            <Link to={`/blog/${featured.slug}`}>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="group rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/[0.02] grid grid-cols-1 lg:grid-cols-2"
-              >
-                <div className="overflow-hidden order-2 lg:order-1 aspect-[4/3] lg:aspect-auto">
-                  <img src={featured.image} alt={featured.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                </div>
-                <div className="p-10 md:p-14 flex flex-col justify-center order-1 lg:order-2">
-                  <span className="text-xs font-semibold tracking-[0.25em] uppercase text-[#93C5FD] mb-4">{featured.category}</span>
-                  <h2 className="font-display font-semibold text-3xl md:text-4xl tracking-tight group-hover:text-[#93C5FD] transition-colors">
-                    {featured.title}
-                  </h2>
-                  <p className="mt-4 text-white/70 leading-relaxed">{featured.excerpt}</p>
-                  <div className="mt-6 flex items-center gap-3 text-sm text-white/60">
-                    <span>{featured.date}</span>
-                    <ArrowRight size={14} className="text-[#93C5FD]" />
-                  </div>
-                </div>
-              </motion.div>
-            </Link>
-          </div>
-        </section>
-      )}
-
-      {/* Rest */}
-      <section className="py-20" style={{ backgroundColor: "#11214a" }}>
+      {/* Articles grid tile layout */}
+      <section className="py-20 md:py-24 bg-[#f8f7f4]">
         <div className="max-w-7xl mx-auto section-padding">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {rest.map((post, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+            {blogPosts.map((post, i) => (
               <Link to={`/blog/${post.slug}`} key={post.slug}>
                 <motion.article
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  className="group rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/[0.02]"
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: i * 0.06 }}
+                  className="group h-full rounded-2xl overflow-hidden ring-1 ring-black/5 bg-white shadow-[0_10px_40px_-20px_rgba(6,33,97,0.15)] hover:shadow-[0_20px_60px_-20px_rgba(6,33,97,0.25)] transition-shadow"
                 >
                   <div className="aspect-[3/2] overflow-hidden">
                     <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   </div>
                   <div className="p-7">
-                    <span className="text-xs font-semibold tracking-[0.25em] uppercase text-[#93C5FD]">{post.category}</span>
-                    <h3 className="font-display font-semibold text-xl mt-3 group-hover:text-[#93C5FD] transition-colors">{post.title}</h3>
-                    <p className="mt-3 text-sm text-white/65 line-clamp-2">{post.excerpt}</p>
-                    <p className="mt-5 text-xs text-white/50">{post.date}</p>
+                    <span className="text-xs font-semibold tracking-[0.25em] uppercase text-[#1F63ED]">{post.category}</span>
+                    <h3 className="font-display font-semibold text-xl mt-3 text-[#0a0f1f] group-hover:text-[#1F63ED] transition-colors">{post.title}</h3>
+                    <p className="mt-3 text-sm text-[#0a0f1f]/65 line-clamp-2">{post.excerpt}</p>
+                    <div className="mt-5 flex items-center justify-between">
+                      <p className="text-xs text-[#0a0f1f]/50">{post.date}</p>
+                      <ArrowRight size={14} className="text-[#1F63ED] group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
                 </motion.article>
               </Link>

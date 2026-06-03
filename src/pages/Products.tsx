@@ -16,18 +16,18 @@ const products = [
   {
     name: "Nerdclip",
     tagline: "Platform for modern education",
-    headline: "Run your classrooms, courses, and learners in one place.",
-    body: "From scheduling to grading and collaboration, Nerdclip is the operating system for modern academic teams.",
-    features: ["Smart scheduling", "Collaboration tools", "Progress tracking", "Parent & staff portals"],
+    headline: "Manage your academic life in one place.",
+    body: "Showcase your profile, research, courses, and sell content.",
+    features: ["Custom Website", "Course Management", "Sell Your Content", "Publication Showcase and lots more"],
     image: nerdclipImg,
     accent: "#062161",
   },
   {
     name: "InvoicePent",
     tagline: "Invoicing, receipts, inventory all in one",
-    headline: "The back office your small business actually wants to open.",
+    headline: "Handle invoices, receipts, and inventory within one connected system.",
     body: "Issue invoices, track payments, manage stock, and keep clean books without juggling five tools.",
-    features: ["Invoicing & receipts", "Inventory tracking", "Tax-ready reports", "Multi-currency"],
+    features: ["Invoice Management", "Receipt Management", "Inventory Management", "Track System Activity and lots more"],
     image: invoicepentImg,
     accent: "#062161",
   },
@@ -66,7 +66,7 @@ const Products = () => {
             transition={{ duration: 0.8 }}
             className="font-display font-bold text-5xl md:text-7xl lg:text-[88px] leading-[0.98] tracking-[-0.045em]"
           >
-            Four products engineered <br className="hidden md:block" />
+            Products engineered <br className="hidden md:block" />
             to power your <span className="text-[#1F63ED]">modern business.</span>
           </motion.h1>
           <motion.p
@@ -75,7 +75,7 @@ const Products = () => {
             transition={{ delay: 0.15 }}
             className="mt-7 text-lg md:text-xl text-[#0a0f1f]/70 max-w-2xl mx-auto leading-relaxed"
           >
-            Education, payments, operations, and creative AI built to work together, ready on day one.
+            Smart software for modern business
           </motion.p>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="mt-9">
             <Link to="/contact">

@@ -8,7 +8,8 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Code2, Layers, Zap, Shield, Database, Globe, CheckCircle2 } from "lucide-react";
 import integratedImg from "@/assets/consulting/integrated.png";
 import reliabilityImg from "@/assets/consulting/reliability.png";
-import servicesHero from "@/assets/services-hero.png";
+import servicesHeroAsset from "@/assets/services-image.png.asset.json";
+const servicesHero = servicesHeroAsset.url;
 
 
 const services = [
@@ -22,13 +23,13 @@ const services = [
 
 const Services = () => {
   return (
-    <div className="min-h-screen bg-[#050b1f] text-white overflow-hidden">
+    <div className="min-h-screen bg-white text-[#0a0f1f] overflow-hidden">
       <AnnouncementBar />
       <Navbar />
 
       {/* Hero deep blue to black gradient */}
       <section
-        className="relative pt-20 md:pt-28 pb-24 md:pb-36"
+        className="relative pt-20 md:pt-28 pb-24 md:pb-36 text-white"
         style={{ background: "linear-gradient(180deg, #0a2b6e 0%, #050b1f 60%, #000000 100%)" }}
       >
         <div className="max-w-7xl mx-auto section-padding grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -63,7 +64,7 @@ const Services = () => {
       </section>
 
       {/* Stats strip */}
-      <section className="border-y border-white/10" style={{ backgroundColor: "#0c1838" }}>
+      <section className="border-y border-black/5 bg-[#f8f7f4]">
         <div className="max-w-7xl mx-auto section-padding py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
             { s: "54+", l: "Projects shipped" },
@@ -72,19 +73,19 @@ const Services = () => {
             { s: "99.9%", l: "Uptime delivered" },
           ].map((x) => (
             <div key={x.l}>
-              <p className="font-display font-semibold text-3xl md:text-4xl text-white">{x.s}</p>
-              <p className="text-sm text-white/60 mt-1">{x.l}</p>
+              <p className="font-display font-semibold text-3xl md:text-4xl text-[#0a0f1f]">{x.s}</p>
+              <p className="text-sm text-[#0a0f1f]/60 mt-1">{x.l}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Services grid */}
-      <section className="py-24 md:py-32" style={{ backgroundColor: "#11214a" }}>
+      <section className="py-24 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto section-padding">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mb-16">
-            <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#93C5FD]">What we deliver</p>
-            <h2 className="font-display font-semibold text-4xl md:text-5xl tracking-tight">
+            <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#1F63ED]">What we deliver</p>
+            <h2 className="font-display font-semibold text-4xl md:text-5xl tracking-tight text-[#0a0f1f]">
               Six practices. One delivery team.
             </h2>
           </motion.div>
@@ -96,17 +97,17 @@ const Services = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: i * 0.05 }}
-                className="rounded-2xl p-8 ring-1 ring-white/10 bg-gradient-to-b from-white/[0.04] to-white/[0.01] hover:ring-[#1F63ED]/40 transition"
+                className="rounded-2xl p-8 ring-1 ring-black/5 bg-white shadow-[0_10px_40px_-20px_rgba(6,33,97,0.15)] hover:ring-[#1F63ED]/40 transition"
               >
-                <div className="w-11 h-11 rounded-lg bg-[#1F63ED]/15 ring-1 ring-[#1F63ED]/30 flex items-center justify-center text-[#93C5FD] mb-6">
+                <div className="w-11 h-11 rounded-lg bg-[#1F63ED]/10 ring-1 ring-[#1F63ED]/20 flex items-center justify-center text-[#1F63ED] mb-6">
                   <s.icon size={20} />
                 </div>
-                <h3 className="font-display font-semibold text-xl mb-3">{s.title}</h3>
-                <p className="text-sm text-white/65 leading-relaxed mb-6">{s.desc}</p>
+                <h3 className="font-display font-semibold text-xl mb-3 text-[#0a0f1f]">{s.title}</h3>
+                <p className="text-sm text-[#0a0f1f]/65 leading-relaxed mb-6">{s.desc}</p>
                 <ul className="space-y-2">
                   {s.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm text-white/80">
-                      <CheckCircle2 size={14} className="text-[#93C5FD] shrink-0" /> {f}
+                    <li key={f} className="flex items-center gap-2 text-sm text-[#0a0f1f]/80">
+                      <CheckCircle2 size={14} className="text-[#1F63ED] shrink-0" /> {f}
                     </li>
                   ))}
                 </ul>
@@ -117,17 +118,17 @@ const Services = () => {
       </section>
 
       {/* Feature split Consulting */}
-      <section className="py-24 md:py-32" style={{ backgroundColor: "#0a1632" }}>
+      <section className="py-24 md:py-32 bg-[#f8f7f4]">
         <div className="max-w-7xl mx-auto section-padding grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="rounded-2xl overflow-hidden ring-1 ring-white/10">
+          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="rounded-2xl overflow-hidden ring-1 ring-black/5 shadow-[0_10px_40px_-20px_rgba(6,33,97,0.15)]">
             <img src={integratedImg} alt="Integrated consulting" className="w-full h-full object-cover" />
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#93C5FD]">Integrated consulting</p>
-            <h2 className="font-display font-semibold text-4xl md:text-5xl tracking-tight mb-5">
+            <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#1F63ED]">Integrated consulting</p>
+            <h2 className="font-display font-semibold text-4xl md:text-5xl tracking-tight mb-5 text-[#0a0f1f]">
               Strategy and engineering, under one roof.
             </h2>
-            <p className="text-white/70 leading-relaxed mb-6">
+            <p className="text-[#0a0f1f]/70 leading-relaxed mb-6">
               We pair senior engineers with product strategists so you ship the right thing, the right way, the first time.
             </p>
             <Link to="/contact">
@@ -140,17 +141,17 @@ const Services = () => {
       </section>
 
       {/* Feature split Reliability */}
-      <section className="py-24 md:py-32" style={{ backgroundColor: "#16284f" }}>
+      <section className="py-24 md:py-32 bg-[#eef0f3]">
         <div className="max-w-7xl mx-auto section-padding grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:order-2 rounded-2xl overflow-hidden ring-1 ring-white/10">
+          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:order-2 rounded-2xl overflow-hidden ring-1 ring-black/5 shadow-[0_10px_40px_-20px_rgba(6,33,97,0.15)]">
             <img src={reliabilityImg} alt="Reliability and performance" className="w-full h-full object-cover" />
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:order-1">
-            <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#93C5FD]">Performance & reliability</p>
-            <h2 className="font-display font-semibold text-4xl md:text-5xl tracking-tight mb-5">
+            <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#1F63ED]">Performance & reliability</p>
+            <h2 className="font-display font-semibold text-4xl md:text-5xl tracking-tight mb-5 text-[#0a0f1f]">
               Built to perform. Wired to last.
             </h2>
-            <p className="text-white/70 leading-relaxed mb-6">
+            <p className="text-[#0a0f1f]/70 leading-relaxed mb-6">
               Observability, automated recovery, and capacity built in from day one so your team sleeps at night.
             </p>
             <Link to="/contact">
@@ -161,6 +162,7 @@ const Services = () => {
           </motion.div>
         </div>
       </section>
+
 
       <CTASection />
 

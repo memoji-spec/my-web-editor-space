@@ -6,7 +6,8 @@ import CTASection from "@/components/CTASection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { MapPin, Clock, ArrowRight, Users, Lightbulb, Heart, Rocket } from "lucide-react";
-import collageImg from "@/assets/collage/p2.png";
+import careersHeroAsset from "@/assets/careers.png.asset.json";
+const collageImg = careersHeroAsset.url;
 
 
 const values = [
@@ -27,12 +28,12 @@ const openPositions = [
 
 const Careers = () => {
   return (
-    <div className="min-h-screen bg-[#050b1f] text-white overflow-hidden">
+    <div className="min-h-screen bg-white text-[#0a0f1f] overflow-hidden">
       <AnnouncementBar />
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-20 md:pt-28 pb-24" style={{ background: "linear-gradient(180deg, #0a2b6e 0%, #050b1f 60%, #000000 100%)" }}>
+      <section className="relative pt-20 md:pt-28 pb-24 text-white" style={{ background: "linear-gradient(180deg, #0a2b6e 0%, #050b1f 60%, #000000 100%)" }}>
         <div className="max-w-7xl mx-auto section-padding grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
@@ -56,7 +57,7 @@ const Careers = () => {
       </section>
 
       {/* Stats */}
-      <section className="border-y border-white/10" style={{ backgroundColor: "#0c1838" }}>
+      <section className="border-y border-black/5 bg-[#f8f7f4]">
         <div className="max-w-7xl mx-auto section-padding py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
             { s: "2020", l: "Founding year" },
@@ -65,19 +66,19 @@ const Careers = () => {
             { s: "100%", l: "Remote-friendly" },
           ].map((x) => (
             <div key={x.l}>
-              <p className="font-display font-semibold text-3xl md:text-4xl text-white">{x.s}</p>
-              <p className="text-sm text-white/60 mt-1">{x.l}</p>
+              <p className="font-display font-semibold text-3xl md:text-4xl text-[#0a0f1f]">{x.s}</p>
+              <p className="text-sm text-[#0a0f1f]/60 mt-1">{x.l}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Values */}
-      <section className="py-24 md:py-32" style={{ backgroundColor: "#11214a" }}>
+      <section className="py-24 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto section-padding">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-2xl mb-16">
-            <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#93C5FD]">How we work</p>
-            <h2 className="font-display font-semibold text-4xl md:text-5xl tracking-tight">
+            <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#1F63ED]">How we work</p>
+            <h2 className="font-display font-semibold text-4xl md:text-5xl tracking-tight text-[#0a0f1f]">
               We hire people with a builder's mentality.
             </h2>
           </motion.div>
@@ -89,13 +90,13 @@ const Careers = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.06 }}
-                className="rounded-2xl p-7 ring-1 ring-white/10 bg-gradient-to-b from-white/[0.04] to-white/[0.01]"
+                className="rounded-2xl p-7 ring-1 ring-black/5 bg-white shadow-[0_10px_40px_-20px_rgba(6,33,97,0.15)]"
               >
-                <div className="w-10 h-10 rounded-lg bg-[#1F63ED]/15 ring-1 ring-[#1F63ED]/30 flex items-center justify-center text-[#93C5FD] mb-5">
+                <div className="w-10 h-10 rounded-lg bg-[#1F63ED]/10 ring-1 ring-[#1F63ED]/20 flex items-center justify-center text-[#1F63ED] mb-5">
                   <v.icon size={18} />
                 </div>
-                <h3 className="font-display font-semibold text-lg mb-2">{v.title}</h3>
-                <p className="text-sm text-white/65 leading-relaxed">{v.desc}</p>
+                <h3 className="font-display font-semibold text-lg mb-2 text-[#0a0f1f]">{v.title}</h3>
+                <p className="text-sm text-[#0a0f1f]/65 leading-relaxed">{v.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -103,13 +104,13 @@ const Careers = () => {
       </section>
 
       {/* Open positions */}
-      <section id="open-positions" className="py-24" style={{ backgroundColor: "#0a1632" }}>
+      <section id="open-positions" className="py-24 bg-[#f8f7f4]">
         <div className="max-w-7xl mx-auto section-padding">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
-            <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#93C5FD]">Open roles</p>
-            <h2 className="font-display font-semibold text-4xl md:text-5xl tracking-tight">Find your next role.</h2>
+            <p className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#1F63ED]">Open roles</p>
+            <h2 className="font-display font-semibold text-4xl md:text-5xl tracking-tight text-[#0a0f1f]">Find your next role.</h2>
           </motion.div>
-          <div className="rounded-2xl ring-1 ring-white/10 overflow-hidden divide-y divide-white/10 bg-white/[0.02]">
+          <div className="rounded-2xl ring-1 ring-black/5 overflow-hidden divide-y divide-black/5 bg-white shadow-[0_10px_40px_-20px_rgba(6,33,97,0.15)]">
             {openPositions.map((pos, i) => (
               <motion.div
                 key={pos.title}
@@ -117,15 +118,15 @@ const Careers = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.04 }}
-                className="p-6 md:p-7 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-white/[0.03] transition"
+                className="p-6 md:p-7 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-black/[0.02] transition"
               >
                 <div>
-                  <h3 className="font-display font-semibold text-lg">{pos.title}</h3>
-                  <p className="text-sm text-white/60 mt-1">{pos.department}</p>
+                  <h3 className="font-display font-semibold text-lg text-[#0a0f1f]">{pos.title}</h3>
+                  <p className="text-sm text-[#0a0f1f]/60 mt-1">{pos.department}</p>
                 </div>
                 <div className="flex items-center gap-5">
-                  <span className="flex items-center gap-1 text-xs text-white/60"><MapPin size={14} /> {pos.location}</span>
-                  <span className="flex items-center gap-1 text-xs text-white/60"><Clock size={14} /> {pos.type}</span>
+                  <span className="flex items-center gap-1 text-xs text-[#0a0f1f]/60"><MapPin size={14} /> {pos.location}</span>
+                  <span className="flex items-center gap-1 text-xs text-[#0a0f1f]/60"><Clock size={14} /> {pos.type}</span>
                   <Link to="/contact">
                     <Button size="sm" className="bg-[#1F63ED] hover:bg-[#1F63ED]/90 text-white rounded-lg text-xs gap-1 shadow-none">
                       Apply <ArrowRight size={12} />
@@ -137,6 +138,7 @@ const Careers = () => {
           </div>
         </div>
       </section>
+
 
       <CTASection />
 

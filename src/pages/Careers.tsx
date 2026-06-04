@@ -18,12 +18,12 @@ const values = [
 ];
 
 const openPositions = [
-  { title: "Senior Frontend Engineer", department: "Engineering", location: "Remote", type: "Full-time" },
-  { title: "Backend Engineer (Node.js)", department: "Engineering", location: "Remote", type: "Full-time" },
-  { title: "Product Designer", department: "Design", location: "Remote", type: "Full-time" },
-  { title: "AI/ML Engineer", department: "AI Research", location: "Remote", type: "Full-time" },
-  { title: "DevOps Engineer", department: "Infrastructure", location: "Remote", type: "Full-time" },
-  { title: "Technical Writer", department: "Content", location: "Remote", type: "Contract" },
+  { slug: "senior-frontend-engineer", title: "Senior Frontend Engineer", department: "Engineering", location: "Remote", type: "Full-time" },
+  { slug: "backend-engineer-nodejs", title: "Backend Engineer (Node.js)", department: "Engineering", location: "Remote", type: "Full-time" },
+  { slug: "product-designer", title: "Product Designer", department: "Design", location: "Remote", type: "Full-time" },
+  { slug: "ai-ml-engineer", title: "AI/ML Engineer", department: "AI Research", location: "Remote", type: "Full-time" },
+  { slug: "devops-engineer", title: "DevOps Engineer", department: "Infrastructure", location: "Remote", type: "Full-time" },
+  { slug: "technical-writer", title: "Technical Writer", department: "Content", location: "Remote", type: "Contract" },
 ];
 
 const Careers = () => {
@@ -127,7 +127,7 @@ const Careers = () => {
                 <div className="flex items-center gap-5">
                   <span className="flex items-center gap-1 text-xs text-[#0a0f1f]/60"><MapPin size={14} /> {pos.location}</span>
                   <span className="flex items-center gap-1 text-xs text-[#0a0f1f]/60"><Clock size={14} /> {pos.type}</span>
-                  <Link to="/contact">
+                  <Link to={`/careers/${pos.slug}`}>
                     <Button size="sm" className="bg-[#1F63ED] hover:bg-[#1F63ED]/90 text-white rounded-lg text-xs gap-1 shadow-none">
                       Apply <ArrowRight size={12} />
                     </Button>

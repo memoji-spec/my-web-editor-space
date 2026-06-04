@@ -80,6 +80,32 @@ const articles: Record<string, { title: string; category: string; date: string; 
       "Most importantly, invest in your team. AI is most effective when it enhances human capability. Provide training, encourage experimentation, and create a culture that embraces intelligent automation.",
     ],
   },
+  "design-systems-that-scale": {
+    title: "Design Systems That Scale With Your Team",
+    category: "Design",
+    date: "March 12, 2026",
+    image: "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=1200&h=600&fit=crop",
+    content: [
+      "A design system is more than a component library. It's a shared language between designers, engineers, and product managers that compounds in value as your team and surface area grow.",
+      "The teams that get the most leverage out of design systems treat tokens, not components, as the foundation. Color, spacing, radius, typography, and motion tokens give you a stable contract that can survive multiple visual refreshes without breaking downstream products.",
+      "At Pentagonware, we've evolved our internal design system across four products. The biggest unlock was committing to one source of truth for tokens, then letting product teams build their own composite components on top. Central teams own primitives; product teams own context.",
+      "Documentation is where most design systems quietly die. We treat docs as a product: searchable, opinionated, and full of usage examples. If a component has three correct ways to use it and one wrong one, the docs say so explicitly.",
+      "Finally, measure adoption. A design system only pays back if teams actually reach for it. Track which components get used, which get reinvented, and have honest conversations about why. The gaps are your roadmap.",
+    ],
+  },
+  "payments-in-emerging-markets": {
+    title: "Building Payments for Emerging Markets",
+    category: "Fintech",
+    date: "March 4, 2026",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=600&fit=crop",
+    content: [
+      "Building a payment gateway for emerging markets is a fundamentally different problem from building one for North America or Europe. The constraints, user behaviors, and infrastructure assumptions are all different and the playbook from mature markets rarely transfers cleanly.",
+      "When we built PentaPay, we started with one principle: the payment method should follow the customer, not the other way around. That meant first-class support for mobile money, bank transfer, card, and QR-based flows in a single checkout, with intelligent routing behind the scenes.",
+      "Reliability matters more than features. In markets where connectivity is uneven, a checkout that retries gracefully, caches state offline, and recovers cleanly after a dropped connection will out-convert a flashier competitor every time. We spent more engineering hours on resilience than on any other category.",
+      "Multi-currency is table stakes, but the harder problem is reconciliation. Merchants need a single ledger they can trust, regardless of how many rails, currencies, or payout schedules sit underneath. We invested early in a unified ledger primitive, and it's paid back many times over.",
+      "The opportunity is enormous. Emerging market businesses are increasingly serving global customers, and they need payment infrastructure that respects both sides of that flow. Building that infrastructure well is some of the most rewarding work we've shipped.",
+    ],
+  },
 };
 
 const BlogPost = () => {

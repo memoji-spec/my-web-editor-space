@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
@@ -74,6 +74,11 @@ const Navbar = () => {
   const dropdownTimeout = useRef<NodeJS.Timeout | null>(null);
   const location = useLocation();
 
+  useEffect(() => {
+    setShowDropdown(false);
+    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
+  }, [location.pathname]);
+
   const handleMouseEnter = () => {
     if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
     setShowDropdown(true);
@@ -105,6 +110,7 @@ const Navbar = () => {
             >
               <Link
                 to={link.href}
+                onClick={() => setShowDropdown(false)}
                 className={`px-4 py-2 text-sm font-semibold transition-colors relative group flex items-center gap-1 ${
                   location.pathname === link.href ? "text-foreground" : "text-muted-foreground hover:text-foreground"
                 }`}

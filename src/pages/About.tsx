@@ -7,9 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Target, Eye, Compass, CheckCircle2 } from "lucide-react";
 import collageImg from "@/assets/collage/p2.png";
-import workingTowardsAsset from "@/assets/working-towards.png.asset.json";
+import workingTowardsImg from "@/assets/working-towards.png";
 
-const workingTowardsImg = workingTowardsAsset.url;
 
 const goals = [
   "Build reliable systems that solve real operational challenges",

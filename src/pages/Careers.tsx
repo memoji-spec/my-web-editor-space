@@ -6,8 +6,7 @@ import CTASection from "@/components/CTASection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { MapPin, Clock, ArrowRight, Users, Lightbulb, Heart, Rocket } from "lucide-react";
-import careersHeroAsset from "@/assets/careers.png.asset.json";
-const collageImg = careersHeroAsset.url;
+import collageImg from "@/assets/careers.png";
 
 
 const values = [

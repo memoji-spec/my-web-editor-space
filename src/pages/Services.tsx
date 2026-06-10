@@ -8,8 +8,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Code2, Layers, Zap, Shield, Database, Globe, CheckCircle2 } from "lucide-react";
 import integratedImg from "@/assets/consulting/integrated.png";
 import reliabilityImg from "@/assets/consulting/reliability.png";
-import servicesHeroAsset from "@/assets/services-image.png.asset.json";
-const servicesHero = servicesHeroAsset.url;
+import servicesHero from "@/assets/services-image.png";
 
 
 const services = [
